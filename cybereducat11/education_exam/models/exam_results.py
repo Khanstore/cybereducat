@@ -51,7 +51,7 @@ class ResultsSubjectLine(models.Model):
     grade=fields.Char('Grade',compute='_compute_grade')
     score=fields.Float('GP')
     name = fields.Char(string='Name')
-    subject_id = fields.Many2one('education.subject', string='Subject')
+    subject_id = fields.Many2one('education.syllabus', string='Subject')
     max_mark = fields.Float(string='Max Mark')
     pass_mark = fields.Float(string='Pass Mark')
     mark_scored = fields.Float(string='Mark Scored')

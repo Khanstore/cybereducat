@@ -47,7 +47,7 @@
                                 <tree string="Syllabus Items" editable="bottom">
                                     <field name="name"/>
                                     <field name="subject_id" required="1"/>
-                                    <field name="total_hours"/>
+                                    <!--<field name="total_hours"/>-->
                                     <field name="description"/>
                                     <!--<field name="company_id"/>-->
                                 </tree>

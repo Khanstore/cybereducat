@@ -54,6 +54,7 @@ class EducationDivision(models.Model):
     classes_ids = fields.Many2many('education.class','class_dev_rel','classes_ids','division_ids', string='Class')
 
 
+
 class EducationClassDivision(models.Model):
     _name = 'education.class.division'
     _description = "Class room"

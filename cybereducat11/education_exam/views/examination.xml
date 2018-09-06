@@ -37,7 +37,13 @@
                                 <field name="end_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                             </group>
                         </group>
+                        <div style="padding-bottom: 10px;">
+                            <button style="padding: 1px 5px;background: #5fb18e !important;border-color: #63b892 !important;" string="Create Attendance Table"
+                                    name="get_subjects" type="object"
+                                    attrs="{'invisible': False}" class="oe_highlight"/>
+                        </div>
                         <notebook>
+
                             <page string="Subjects">
                                 <field name="subject_line" attrs="{'readonly': [('state', '!=', 'draft')]}">
                                     <tree editable="bottom">

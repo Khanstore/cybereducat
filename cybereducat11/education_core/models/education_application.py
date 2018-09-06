@@ -33,9 +33,9 @@ class StudentApplication(models.Model):
                                        help="Choose Academic year for which the admission is choosing")
     medium = fields.Many2one('education.medium', string="Medium", required=True,default=1,
                              help="Choose the Medium of class, like Bengali,English etc")
-    sec_lang = fields.Many2one('education.medium', string="Second language",required=False,default=1,
-                               # domain=[('is_language', '=', True)],
-                               help="Choose the Second language")
+    # sec_lang = fields.Many2one('education.medium', string="Second language",required=False,default=1,
+    #                            # domain=[('is_language', '=', True)],
+    #                            help="Choose the Second language")
     mother_tongue = fields.Many2one('education.medium', string="Mother Tongue",default=1,
                                     required=True, help="Enter Student's Mother Tongue")
     register_id = fields.Many2one('education.admission.register', string="Admission Register", required=True,
