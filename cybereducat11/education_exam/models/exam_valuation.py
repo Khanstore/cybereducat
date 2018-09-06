@@ -12,10 +12,11 @@ class EducationExamValuation(models.Model):
     exam_id = fields.Many2one('education.exam', string='Exam', required=True, domain=[('state', '=', 'ongoing')])
     class_id = fields.Many2one('education.class', string='Class', required=True)
     division_id = fields.Many2one('education.class.division', string='Division', required=True)
+    subject_id = fields.Many2one('education.syllabus', string='Subject', required=True)
     teachers_id = fields.Many2one('education.faculty', string='Evaluator')
     mark = fields.Float(string='Max Mark', compute='calculate_marks')
     pass_mark = fields.Float(string='Pass Mark', compute='calculate_marks')
-    tut_mark = fields.Integer('Tutorial Mark')
+    tut_mark = fields.Float('Tutorial Mark',related='subject_id.tut_mark')
     tut_pass_mark = fields.Integer('Tutorial Pass Mark')
     subj_mark = fields.Integer('Subjective Mark')
     subj_pass_mark = fields.Integer('Subjective Pass Mark')
@@ -28,7 +29,6 @@ class EducationExamValuation(models.Model):
 
     state = fields.Selection([('draft', 'Draft'), ('completed', 'Completed'), ('cancel', 'Canceled')], default='draft')
     valuation_line = fields.One2many('exam.valuation.line', 'valuation_id', string='Students')
-    subject_id = fields.Many2one('education.subject', string='Subject', required=True)
     mark_sheet_created = fields.Boolean(string='Mark sheet Created')
     date = fields.Date(string='Date', default=fields.Date.today)
     academic_year = fields.Many2one('education.academic.year', string='Academic Year',
