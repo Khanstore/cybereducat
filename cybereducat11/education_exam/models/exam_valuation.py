@@ -14,18 +14,18 @@ class EducationExamValuation(models.Model):
     division_id = fields.Many2one('education.class.division', string='Division', required=True)
     subject_id = fields.Many2one('education.syllabus', string='Subject', required=True)
     teachers_id = fields.Many2one('education.faculty', string='Evaluator')
-    mark = fields.Float(string='Max Mark', compute='calculate_marks')
-    pass_mark = fields.Float(string='Pass Mark', compute='calculate_marks')
+    mark = fields.Float(string='Max Mark', related='subject_id.total_mark')
+    pass_mark = fields.Float(string='Pass Mark', related='subject_id.pass_mark')
     tut_mark = fields.Float('Tutorial Mark',related='subject_id.tut_mark')
-    tut_pass_mark = fields.Integer('Tutorial Pass Mark')
-    subj_mark = fields.Integer('Subjective Mark')
-    subj_pass_mark = fields.Integer('Subjective Pass Mark')
+    tut_pass_mark = fields.Float('Tutorial Pass Mark',related='subject_id.tut_pass')
+    subj_mark = fields.Float('Subjective Mark',related='subject_id.subj_mark')
+    subj_pass_mark = fields.Float('Subjective Pass Mark',related='subject_id.subj_pass')
 
-    obj_mark = fields.Integer('Objective Mark')
-    obj_pass_mark = fields.Integer('Objective Pass Mark')
+    obj_mark = fields.Float('Objective Mark',related='subject_id.obj_mark')
+    obj_pass_mark = fields.Float('Objective Pass Mark',related='subject_id.obj_pass')
 
-    prac_mark = fields.Integer('Practical Mark')
-    prac_pass_mark = fields.Integer('Practical Pass Mark')
+    prac_mark = fields.Float('Practical Mark',related='subject_id.prac_mark')
+    prac_pass_mark = fields.Float('Practical Pass Mark',related='subject_id.prac_pass')
 
     state = fields.Selection([('draft', 'Draft'), ('completed', 'Completed'), ('cancel', 'Canceled')], default='draft')
     valuation_line = fields.One2many('exam.valuation.line', 'valuation_id', string='Students')
@@ -55,15 +55,15 @@ class EducationExamValuation(models.Model):
             domain = [('class_id', '=', self.class_id.id)]
         return {'domain': {'division_id': domain}}
 
-    @api.onchange('pass_mark')
-    def onchange_pass_mark(self):
-        if self.pass_mark > self.mark:
-            raise UserError(_('Pass mark must be less than Max Mark'))
-        for records in self.valuation_line:
-            if records.mark_scored >= self.pass_mark:
-                records.pass_or_fail = True
-            else:
-                records.pass_or_fail = False
+    # @api.onchange('pass_mark')
+    # def onchange_pass_mark(self):
+    #     if self.pass_mark > self.mark:
+    #         raise UserError(_('Pass mark must be less than Max Mark'))
+    #     for records in self.valuation_line:
+    #         if records.mark_scored >= self.pass_mark:
+    #             records.pass_or_fail = True
+    #         else:
+    #             records.pass_or_fail = False
 
     @api.onchange('exam_id', 'subject_id')
     def onchange_exam_id(self):
