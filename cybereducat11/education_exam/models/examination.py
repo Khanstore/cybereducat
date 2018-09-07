@@ -62,12 +62,25 @@ class EducationExam(models.Model):
             name = name + ' (' + str(self.class_id.name) + ')'
         self.name = name
         self.state = 'ongoing'
+    @api.multi
+    def get_subjects(self):
+        for rec in self:
+            subjline_obj=self.env['education.subject.line']
 
+            subjects=self.env['education.syllabus'].search([('class_id','=',rec.class_id.id),('academic_year','=',rec.academic_year.id)])  #.search([('class_id', '=', self.id)])
+            for subject in subjects :
+                data={'subject_id': subject.subject_id.id,
+                      'exam_id': rec.id,
+                      'time_from': '10.30',
+                      'time_to': '12.30',
+                      'date':rec.start_date
+                      }
 
+            subjline_obj.create(data)
 class SubjectLine(models.Model):
     _name = 'education.subject.line'
 
-    subject_id = fields.Many2one('education.subject', string='Subject', required=True)
+    subject_id = fields.Many2one('education.syllabus', string='Subject', required=True)
     date = fields.Date(string='Date', required=True)
     time_from = fields.Float(string='Time From', required=True)
     time_to = fields.Float(string='Time To', required=True)

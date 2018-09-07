@@ -70,8 +70,8 @@
                                         <tr></tr>
                                         <t t-foreach="get_subjects(o)" t-as="s" >
                                             <tr>
-                                            <td ><strong>  <span t-field="s.subject_id"/> </strong></td>
-                                            <td ><strong> <span t-field="s.tut_mark"/> </strong></td>
+                                            <td ><strong>  <span t-field="s.subject_id.subject_id.name"/> </strong></td>
+                                            <td ><strong> <span t-field="s.subject_id.paper"/> </strong></td>
                                             <td ><strong><span t-field="s.max_mark"/></strong></td>
                                             <td ><strong> <span t-field="s.tut_mark"/> </strong></td>
                                             <td ><strong> <span t-field="s.subj_mark"/> </strong></td>
