@@ -38,7 +38,7 @@
                             </group>
                         </group>
                         <div style="padding-bottom: 10px;">
-                            <button style="padding: 1px 5px;background: #5fb18e !important;border-color: #63b892 !important;" string="Create Attendance Table"
+                            <button style="padding: 1px 5px;background: #5fb18e !important;border-color: #63b892 !important;" string="Get Subjects for Exam"
                                     name="get_subjects" type="object"
                                     attrs="{'invisible': False}" class="oe_highlight"/>
                         </div>

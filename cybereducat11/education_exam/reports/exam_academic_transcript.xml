@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_exam_academic_transcript">
+            <t t-call="web.html_container">
+                <t t-foreach="get_students(docs)" t-as="student">
+
+
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <style>
+                                table, th, td {
+                                     border: 1px solid black;
+                                    }
+                            </style>
+                              <table >
+                                <tr>
+                                    <td><strong>ID : <span t-field="student.id"/></strong></td>
+                                    <td colspan="5" rowspan="5">
+                                        <table>
+                                    <tr><td>letter Grade </td><td>Grade interval </td><td>point</td></tr>
+
+                                                <t t-foreach="get_gradings(o)" t-as="g">
+                                                    <tr><td> <span t-field="g.result"/></td>
+                                                        <td> <span t-field="g.min_per"/>-<span t-field="g.max_per"/>%</td>
+                                                        <td> <span t-field="g.score"/></td>
+                                                    </tr>
+                                                </t>
+
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong> name <span t-field="student.name"/>
+                                                        <span t-field="student.middle_name"/>
+                                                        <span t-field="student.last_name"/>
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong> Father : <span t-field="student.father_name"/>
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong> Mother : <span t-field="student.mother_name"/>
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr>
+    </tr>
+                            </table>
+<table>
+    <tr>
+         <t t-foreach="get_exams(docs)" t-as="exam">
+            <td>
+                <table><tr>
+                    <t t-if="exam_first"> <td rowspan="2">Subject</td><td rowspan="2">Paper</td><td rowspan="2">Full Mark</td></t>
+        <td colspan="9"> <strong> <span t-field="exam.exam_type"/> </strong></td></tr><tr>
+                <td>Tut</td><td>Sub</td><td>Obj</td><td>Prac</td><td>Total</td><td>Highest</td><td>LG</td><td>GP</td><td>GPA</td></tr>
+                      <t t-foreach="get_subjects(exam)" t-as="s" >
+                          <tr><t t-if="exam_first"><td><span t-field="s.subject_id.name"/> </td><td><span t-field="s.subject_id.paper"/> </td><td><span t-field="s.max_mark"/> </td></t>
+                          <td ><strong> <span t-field="s.tut_mark"/> </strong></td>
+                                            <td ><strong> <span t-field="s.subj_mark"/> </strong></td>
+                                            <td ><strong> <span t-field="s.obj_mark"/> </strong></td>
+                                            <td ><strong> <span t-field="s.prac_mark"/> </strong></td>
+                                            <td ><strong> <span t-field="s.mark_scored"/> </strong></td>
+                                            <td ><strong> Highest </strong></td>
+                                            <td ><strong><span t-field="s.grade"/> </strong></td>
+                                            <td ><strong> <span t-field="s.score"/> </strong></td>
+                                            <td ><strong> GPA </strong></td>
+                          </tr>
+                      </t>
+
+
+                </table>
+            </td>
+         </t>
+    </tr>
+</table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

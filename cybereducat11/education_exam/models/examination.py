@@ -25,7 +25,7 @@ class EducationExam(models.Model):
                                     related='division_id.academic_year_id', store=True)
     company_id = fields.Many2one('res.company', string='Company',
                                  default=lambda self: self.env['res.company']._company_default_get())
-
+    transcript_id=fields.Many2one('academic.transcript')
     @api.model
     def create(self, vals):
         res = super(EducationExam, self).create(vals)
@@ -75,11 +75,10 @@ class EducationExam(models.Model):
                       'time_to': '12.30',
                       'date':rec.start_date
                       }
-
-            subjline_obj.create(data)
+                subjline_obj.create(data)
 class SubjectLine(models.Model):
     _name = 'education.subject.line'
-
+    _rec_name = 'subject_id'
     subject_id = fields.Many2one('education.syllabus', string='Subject', required=True)
     date = fields.Date(string='Date', required=True)
     time_from = fields.Float(string='Time From', required=True)
@@ -88,7 +87,7 @@ class SubjectLine(models.Model):
     exam_id = fields.Many2one('education.exam', string='Exam')
     company_id = fields.Many2one('res.company', string='Company',
                                  default=lambda self: self.env['res.company']._company_default_get())
-
+    _sql_constraints = [('unque_subject_exam','unique(subject_id,exam_id)','Subject Already added!'),]
 
 class EducationExamType(models.Model):
     _name = 'education.exam.type'

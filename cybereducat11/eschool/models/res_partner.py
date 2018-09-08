@@ -9,7 +9,7 @@ class examtabulationwizard(models.Model):
     last_name=fields.Char('Last Name')
     middle_name_b=fields.Char("নামের মধ্যাংশ")
     last_name_b=fields.Char("নামের শেষাংশ")
-    nid_no=fields.Integer('NID No')
+    nid_no=fields.Char('NID No')
     car_no=fields.Char('Car No')
     gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('other', 'Other')],
                               string='Gender', required=True, default='male', track_visibility='onchange')

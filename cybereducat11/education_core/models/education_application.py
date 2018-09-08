@@ -75,7 +75,7 @@ class StudentApplication(models.Model):
     guardian_name = fields.Char(string="guardian's First Name", help="Proud to say my guardian is")
     guardian_m_name = fields.Char(string="guardian's Middle Name", help="Proud to say my guardian is")
     guardian_l_name = fields.Char(string="guardian's Last Name", help="Proud to say my guardian is")
-    guardian_NID = fields.Integer(string="guardian's NID", help="guardian's NID")
+    guardian_NID = fields.Char(string="guardian's NID", help="guardian's NID")
     guardian_mobile = fields.Integer(string="guardian's Mobile No", help="guardian's Mobile No")
     guardian_car_no = fields.Char(string="guardian's Car No", help="guardian's Car No")
 
@@ -89,7 +89,7 @@ class StudentApplication(models.Model):
     father_name_b = fields.Char(string="Father's First Name", help="Proud to say my father is")
     father_m_name_b = fields.Char(string="Father's Middle Name", help="Proud to say my father is")
     father_l_name_b = fields.Char(string="Father's Last Name", help="Proud to say my father is")
-    father_NID = fields.Integer(string="Father's NID", help="Father's NID")
+    father_NID = fields.Char(string="Father's NID", help="Father's NID")
     father_mobile = fields.Integer(string="Father's Mobile No", help="Father's Mobile No")
     father_car_no = fields.Char(string="Father's Car No", help="Father's Car No")
     # father_name = fields.Many2one('res.partner', string="Father", domain=[('is_parent', '=', True)], required=True, help="Proud to say my father is")
@@ -102,7 +102,7 @@ class StudentApplication(models.Model):
     mother_m_name_b = fields.Char(string="mother's Middle Name", help="Proud to say my mother is")
     mother_l_name = fields.Char(string="mother's Last Name", help="Proud to say my mother is")
     mother_l_name_b = fields.Char(string="mother's Last Name", help="Proud to say my mother is")
-    mother_NID = fields.Integer(string="mother's NID", help="mother's NID")
+    mother_NID = fields.Char(string="mother's NID", help="mother's NID")
     mother_mobile = fields.Integer(string="mother's Mobile No", help="mother's Mobile No")
     mother_car_no = fields.Char(string="mother's Car No", help="mother's Car No")
 
