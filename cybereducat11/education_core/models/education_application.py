@@ -22,10 +22,12 @@ class StudentApplication(models.Model):
     middle_name = fields.Char(string='Middle Name', help="Enter Middle name of Student")
     last_name = fields.Char(string='Last Name', help="Enter Last name of Student")
     name_b = fields.Char("নামের প্রথম অংশ",required=True)
-    middle_name_b = fields.Char("নামের মধ্যাংশ",required=True)
-    last_name_b = fields.Char("নামের শেয়াংশ",required=True)
+    # middle_name_b = fields.Char("নামের মধ্যাংশ")
+    # last_name_b = fields.Char("নামের শেয়াংশ",required=True)
     already_student=fields.Boolean("Allready Admitted?")
     student_id=fields.Char('Student Id')
+    student_category=fields.Selection([('I',"Internal"),
+                                       ('E', "External")],'Category')
     prev_school = fields.Many2one('education.institute', string='Previous Institution',
                                   help="Enter the name of previous institution")
     image = fields.Binary(string='Image', help="Provide the image of the Student")
@@ -46,7 +48,7 @@ class StudentApplication(models.Model):
     company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.user.company_id)
     email = fields.Char(string="student Email", help="Enter E-mail id for contact purpose")
     phone = fields.Char(string="student Phone", help="Enter Phone no. for contact purpose")
-    mobile = fields.Char(string="Student Mobile", required=True, help="Enter Mobile num for contact purpose")
+    mobile = fields.Char(string="Student Mobile", help="Enter Mobile num for contact purpose")
     nationality = fields.Many2one('res.country', string='Nationality', ondelete='restrict',default=19,
                                   help="Select the Nationality")
 
@@ -72,10 +74,10 @@ class StudentApplication(models.Model):
     guardian_relation = fields.Many2one('gurdian.student.relation', string="Relation to Guardian",  required=True,
                                         help="Tell us the Relation toyour guardian")
     #### guardian Details
-    guardian_name = fields.Char(string="guardian's First Name", help="Proud to say my guardian is")
-    guardian_m_name = fields.Char(string="guardian's Middle Name", help="Proud to say my guardian is")
-    guardian_l_name = fields.Char(string="guardian's Last Name", help="Proud to say my guardian is")
-    guardian_NID = fields.Char(string="guardian's NID", help="guardian's NID")
+    guardian_name = fields.Char(string="guardian's First Name", help="Proud to say my guardian is",required=True)
+    # guardian_m_name = fields.Char(string="guardian's Middle Name", help="Proud to say my guardian is")
+    # guardian_l_name = fields.Char(string="guardian's Last Name", help="Proud to say my guardian is",required=True)
+    guardian_NID = fields.Char(string="guardian's NID", help="guardian's NID",required=True)
     guardian_mobile = fields.Integer(string="guardian's Mobile No", help="guardian's Mobile No")
     guardian_car_no = fields.Char(string="guardian's Car No", help="guardian's Car No")
 
@@ -83,26 +85,26 @@ class StudentApplication(models.Model):
     #                                 help="Tell us who will take care of you")
     description = fields.Text(string="Note")
     #### Father Details
-    father_name = fields.Char(string="Father's First Name", help="Proud to say my father is")
-    father_m_name = fields.Char(string="Father's Middle Name", help="Proud to say my father is")
-    father_l_name = fields.Char(string="Father's Last Name", help="Proud to say my father is")
-    father_name_b = fields.Char(string="Father's First Name", help="Proud to say my father is")
-    father_m_name_b = fields.Char(string="Father's Middle Name", help="Proud to say my father is")
-    father_l_name_b = fields.Char(string="Father's Last Name", help="Proud to say my father is")
-    father_NID = fields.Char(string="Father's NID", help="Father's NID")
+    father_name = fields.Char(string="Father's First Name", help="Proud to say my father is",required=True)
+    # father_m_name = fields.Char(string="বাবার নাম মধ্য অংশ", help="Proud to say my father is")
+    # father_l_name = fields.Char(string="Father's Last Name", help="Proud to say my father is",required=True)
+    father_name_b = fields.Char(string="বাবার নাম প্রথম অংশ", help="Proud to say my father is",required=True)
+    # father_m_name_b = fields.Char(string="বাবার নাম মাঝের অংশ", help="Proud to say my father is")
+    # father_l_name_b = fields.Char(string="Father's Last Name", help="Proud to say my father is",required=True)
+    father_NID = fields.Char(string="Father's NID", help="Father's NID",required=True)
     father_mobile = fields.Integer(string="Father's Mobile No", help="Father's Mobile No")
     father_car_no = fields.Char(string="Father's Car No", help="Father's Car No")
     # father_name = fields.Many2one('res.partner', string="Father", domain=[('is_parent', '=', True)], required=True, help="Proud to say my father is")
     # mother_name = fields.Char(string="Mother", help="My mother's name is")
     # mother_name = fields.Many2one('res.partner', string="Mother", domain=[('is_parent', '=', True)], required=True, help="My mother name is")
     #### Mother Details
-    mother_name = fields.Char(string="mother's First Name", help="Proud to say my mother is")
-    mother_name_b = fields.Char(string="mother's First Name", help="Proud to say my mother is")
-    mother_m_name = fields.Char(string="mother's Middle Name", help="Proud to say my mother is")
-    mother_m_name_b = fields.Char(string="mother's Middle Name", help="Proud to say my mother is")
-    mother_l_name = fields.Char(string="mother's Last Name", help="Proud to say my mother is")
-    mother_l_name_b = fields.Char(string="mother's Last Name", help="Proud to say my mother is")
-    mother_NID = fields.Char(string="mother's NID", help="mother's NID")
+    mother_name = fields.Char(string="mother's First Name", help="Proud to say my mother is",required=True)
+    mother_name_b = fields.Char(string="মা এর প্রথম নাম", help="Proud to say my mother is",required=True)
+    # mother_m_name = fields.Char(string="mother's Middle Name", help="Proud to say my mother is")
+    # mother_m_name_b = fields.Char(string="মা এর মধ্যনাম", help="Proud to say my mother is")
+    # mother_l_name = fields.Char(string="mother's Last Name", help="Proud to say my mother is",required=True)
+    # mother_l_name_b = fields.Char(string="মায়ের শেষ নাম", help="Proud to say my mother is",required=True)
+    mother_NID = fields.Char(string="mother's NID", help="mother's NID",required=True)
     mother_mobile = fields.Integer(string="mother's Mobile No", help="mother's Mobile No")
     mother_car_no = fields.Char(string="mother's Car No", help="mother's Car No")
 
@@ -134,15 +136,15 @@ class StudentApplication(models.Model):
                     rec.guardian_mobile=rec.father_mobile
                     rec.guardian_car_no=rec.father_car_no
                     rec.guardian_name=rec.father_name
-                    rec.guardian_m_name=rec.father_m_name
-                    rec.guardian_l_name=rec.father_l_name
+                    # rec.guardian_m_name=rec.father_m_name
+                    # rec.guardian_l_name=rec.father_l_name
                 elif  rec.guardian_relation.name=='Mother':
                     rec.guardian_NID = rec.mother_NID
                     rec.guardian_mobile = rec.mother_mobile
                     rec.guardian_car_no = rec.mother_car_no
                     rec.guardian_name = rec.mother_name
-                    rec.guardian_m_name = rec.mother_m_name
-                    rec.guardian_l_name = rec.mother_l_name
+                    # rec.guardian_m_name = rec.mother_m_name
+                    # rec.guardian_l_name = rec.mother_l_name
 
     @api.model
     def create(self, vals):
@@ -183,10 +185,10 @@ class StudentApplication(models.Model):
                                                 'mobile': rec.father_mobile,
                                                 'car_no': rec.father_car_no,
                                                 'name_b': rec.father_name_b,
-                                                'middle_name': rec.father_m_name,
-                                                'middle_name_b': rec.father_m_name_b,
-                                                'last_name_b': rec.father_l_name_b,
-                                                'last_name': rec.father_l_name,
+                                                # 'middle_name': rec.father_m_name,
+                                                # 'middle_name_b': rec.father_m_name_b,
+                                                # 'last_name_b': rec.father_l_name_b,
+                                                # 'last_name': rec.father_l_name,
                                                 'gender': 'male',
                                                 'is_parent': True})
                 father=new_father_id.id
@@ -211,10 +213,10 @@ class StudentApplication(models.Model):
             values = {
                 'name': rec.name,
                 'name_b': rec.name_b,
-                'last_name': rec.last_name,
-                'last_name_b':rec.last_name_b,
-                'middle_name': rec.middle_name,
-                'middle_name_b': rec.middle_name_b,
+                # 'last_name': rec.last_name,
+                # 'last_name_b':rec.last_name_b,
+                # 'middle_name': rec.middle_name,
+                # 'middle_name_b': rec.middle_name_b,
                 'application_id': rec.id,
                 'father_name': father,
                 'mother_name': mother,
@@ -249,6 +251,7 @@ class StudentApplication(models.Model):
                 'mother_tongue': rec.mother_tongue.id,
                 'admission_class': rec.register_id.standard.id,
                 'company_id': rec.company_id.id,
+                'student_id': rec.student_id
             }
             if not rec.is_same_address:
                 pass

@@ -12,8 +12,8 @@
                     <page name='bengali' string="বাংলা">
                         <group name="container_bengali">
                             <field name="name_b" placeholder="নামের প্রথম অংশ"/>
-                            <field name="middle_name_b" placeholder="নামের মধ্যাংশ"/>
-                            <field name="last_name_b" placeholder="নামের শেষাংশ"/>
+                            <!--<field name="middle_name_b" placeholder="নামের মধ্যাংশ"/>-->
+                            <!--<field name="last_name_b" placeholder="নামের শেষাংশ"/>-->
 
                         </group>
                     </page>

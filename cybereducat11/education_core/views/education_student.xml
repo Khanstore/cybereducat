@@ -101,7 +101,7 @@
                                 <tr>
                                     <td style="padding-right:10px;"><field name="name_b" placeholder="নামের প্রথম অংশ" required="1"/></td>
                                     <td style="padding-right:10px;"><field name="middle_name_b" placeholder="নামের মধ্যাংশ" /></td>
-                                    <td style="padding-right:10px;"><field name="last_name_b" placeholder="নামের শেষাংশ" required="1"/></td>
+                                    <!--<td style="padding-right:10px;"><field name="last_name_b" placeholder="নামের শেষাংশ" required="1"/></td>-->
                                 </tr>
                             </table>
                         </h2>

@@ -44,7 +44,7 @@
             <tree string="Student Application">
                 <field name="application_no"/>
                 <field name="name"/>
-                <field name="last_name"/>
+                <!--<field name="last_name"/>-->
                 <field name="gender"/>
                 <field name="date_of_birth"/>
                 <field name="email"/>
@@ -98,13 +98,13 @@
                             <table>
                                 <tr>
                                     <td style="padding-right:10px;"><field name="name" placeholder="First Name" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
-                                    <td style="padding-right:10px;"><field name="middle_name" placeholder="Middle Name" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
-                                    <td style="padding-right:10px;"><field name="last_name" placeholder="Last Name" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
+                                    <!--<td style="padding-right:10px;"><field name="middle_name" placeholder="Middle Name" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
+                                    <!--<td style="padding-right:10px;"><field name="last_name" placeholder="Last Name" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
                                 </tr>
                                 <tr>
                                     <td style="padding-right:10px;"><field name="name_b" placeholder="নামের প্রথম অংশ" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
-                                    <td style="padding-right:10px;"><field name="middle_name_b" placeholder="নামের মধ্যাংশ" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
-                                    <td style="padding-right:10px;"><field name="last_name_b" placeholder="নামের শেষাংশ" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
+                                    <!--<td style="padding-right:10px;"><field name="middle_name_b" placeholder="নামের মধ্যাংশ" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
+                                    <!--<td style="padding-right:10px;"><field name="last_name_b" placeholder="নামের শেষাংশ" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
                                 </tr>
                             </table>
                         </h4>
@@ -116,7 +116,7 @@
                      <div  attrs="{'invisible':[('already_student','=',True)]}">
                     <separator/>
                     <group string="Admission Details">
-
+                            <field name="student_category" required="1" placeholder="Internal or External"/>
                             <field name="register_id" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/>
                             <field name="academic_year_id" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/>
                             <field name="application_date" attrs="{'readonly': [('state', '=', 'done')]}"/>
@@ -149,11 +149,11 @@
                                  <field name="father_car_no"/>
                                  <field name="father_mobile"/>
                                  <field name="father_name" nolabel='1' placeholder="First Name" colspan="2"/>
-                                 <field name="father_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>
-                                 <field name="father_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>
+                                 <!--<field name="father_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>-->
+                                 <!--<field name="father_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>-->
                                  <field name="father_name_b" nolabel='1' placeholder="নামের প্রথম অংশ" colspan="2"/>
-                                 <field name="father_m_name_b" nolabel='1' placeholder="নামের মধ্যাংশ" colspan="2"/>
-                                 <field name="father_l_name_b" nolabel='1' placeholder="নামের শেষ অংশ" colspan="2"/>
+                                 <!--<field name="father_m_name_b" nolabel='1' placeholder="নামের মধ্যাংশ" colspan="2"/>-->
+                                 <!--<field name="father_l_name_b" nolabel='1' placeholder="নামের শেষ অংশ" colspan="2"/>-->
                              </group>
                              <group col="6">
                                  <separator string="Mother's Information" colspan="6"/>
@@ -161,11 +161,11 @@
                                  <field name="mother_car_no"/>
                                  <field name="mother_mobile"/>
                                  <field name="mother_name" nolabel='1' placeholder="First Name" colspan="2"/>
-                                 <field name="mother_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>
-                                 <field name="mother_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>
+                                 <!--<field name="mother_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>-->
+                                 <!--<field name="mother_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>-->
                                  <field name="mother_name_b" nolabel='1' placeholder="নামের প্রথম অংশ" colspan="2"/>
-                                 <field name="mother_m_name_b" nolabel='1' placeholder="নামের মধ্যাংশ" colspan="2"/>
-                                 <field name="mother_l_name_b" nolabel='1' placeholder="নামের শেষ অংশ" colspan="2"/>
+                                 <!--<field name="mother_m_name_b" nolabel='1' placeholder="নামের মধ্যাংশ" colspan="2"/>-->
+                                 <!--<field name="mother_l_name_b" nolabel='1' placeholder="নামের শেষ অংশ" colspan="2"/>-->
                              </group>
                          </page>
 
@@ -178,8 +178,8 @@
                                  <field name="guardian_car_no"/>
                                  <field name="guardian_mobile"/>
                                  <field name="guardian_name" nolabel='1' placeholder="First Name" colspan="2"/>
-                                 <field name="guardian_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>
-                                 <field name="guardian_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>
+                                 <!--<field name="guardian_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>-->
+                                 <!--<field name="guardian_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>-->
                             </group>
                          </page>
                          <page string="Address">
