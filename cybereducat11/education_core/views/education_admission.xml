@@ -19,7 +19,7 @@
         <field name="model">education.admission.register</field>
         <field name="arch" type="xml">
             <form string="Admission Register">
-                <group col="4">
+                <group >
                     <field name="name"/>
                     <field name="standard"/>
                     <field name="academic_year"/>
@@ -97,12 +97,12 @@
                         <h4>
                             <table>
                                 <tr>
-                                    <td style="padding-right:10px;"><field name="name" placeholder="First Name" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
+                                    <td style="padding-right:10px;"><field name="name" placeholder="Name" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
                                     <!--<td style="padding-right:10px;"><field name="middle_name" placeholder="Middle Name" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
                                     <!--<td style="padding-right:10px;"><field name="last_name" placeholder="Last Name" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
                                 </tr>
                                 <tr>
-                                    <td style="padding-right:10px;"><field name="name_b" placeholder="নামের প্রথম অংশ" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
+                                    <td style="padding-right:10px;"><field name="name_b" placeholder="নাম (বাংলায়)" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
                                     <!--<td style="padding-right:10px;"><field name="middle_name_b" placeholder="নামের মধ্যাংশ" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
                                     <!--<td style="padding-right:10px;"><field name="last_name_b" placeholder="নামের শেষাংশ" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
                                 </tr>
@@ -148,10 +148,10 @@
                                  <field name="father_NID"/>
                                  <field name="father_car_no"/>
                                  <field name="father_mobile"/>
-                                 <field name="father_name" nolabel='1' placeholder="First Name" colspan="2"/>
+                                 <field name="father_name" nolabel='1' placeholder=" Father's Name" colspan="2"/>
                                  <!--<field name="father_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>-->
                                  <!--<field name="father_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>-->
-                                 <field name="father_name_b" nolabel='1' placeholder="নামের প্রথম অংশ" colspan="2"/>
+                                 <field name="father_name_b" nolabel='1' placeholder="পিতার নাম" colspan="2"/>
                                  <!--<field name="father_m_name_b" nolabel='1' placeholder="নামের মধ্যাংশ" colspan="2"/>-->
                                  <!--<field name="father_l_name_b" nolabel='1' placeholder="নামের শেষ অংশ" colspan="2"/>-->
                              </group>
@@ -160,10 +160,10 @@
                                  <field name="mother_NID"/>
                                  <field name="mother_car_no"/>
                                  <field name="mother_mobile"/>
-                                 <field name="mother_name" nolabel='1' placeholder="First Name" colspan="2"/>
+                                 <field name="mother_name" nolabel='1' placeholder="Mother's Name" colspan="2"/>
                                  <!--<field name="mother_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>-->
                                  <!--<field name="mother_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>-->
-                                 <field name="mother_name_b" nolabel='1' placeholder="নামের প্রথম অংশ" colspan="2"/>
+                                 <field name="mother_name_b" nolabel='1' placeholder="মায়ের নাম" colspan="2"/>
                                  <!--<field name="mother_m_name_b" nolabel='1' placeholder="নামের মধ্যাংশ" colspan="2"/>-->
                                  <!--<field name="mother_l_name_b" nolabel='1' placeholder="নামের শেষ অংশ" colspan="2"/>-->
                              </group>
@@ -177,7 +177,7 @@
                                     <field name="guardian_NID"/>
                                  <field name="guardian_car_no"/>
                                  <field name="guardian_mobile"/>
-                                 <field name="guardian_name" nolabel='1' placeholder="First Name" colspan="2"/>
+                                 <field name="guardian_name" nolabel='1' placeholder="Guardian's Name" colspan="2"/>
                                  <!--<field name="guardian_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>-->
                                  <!--<field name="guardian_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>-->
                             </group>
@@ -188,7 +188,7 @@
                                 <field name="street" required="1" placeholder="House No / Village..." class="o_address_street" attrs="{'readonly': [('state', '=', 'done')]}"/>
                                 <field name="street2" placeholder="Road/ Post Office..." class="o_address_street" attrs="{'readonly': [('state', '=', 'done')]}"/>
                                 <field name="city" placeholder="Area/Thana" class="o_address_city" attrs="{'readonly': [('state', '=', 'done')]}"/>
-                                <field name="state_id" class="o_address_state" placeholder="City/Town/District" options='{"no_open": True}' attrs="{'readonly': [('state', '=', 'done')]}"/>
+                                <field name="state_id" class="o_address_state" placeholder="City/Town/District" options='{"no_open": True}' attrs="{'readonly': [('state', '=', 'done')]}" domain="[('country_id','=',country_id)]"/>
                                 <field name="zip" placeholder="Post Code" class="o_address_zip" attrs="{'readonly': [('state', '=', 'done')]}"/>
                                 <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}' attrs="{'readonly': [('state', '=', 'done')]}"/>
                             </div>
@@ -201,7 +201,7 @@
                                     <field name="per_street" placeholder="House No / Village..." class="o_address_street"/>
                                     <field name="per_street2" placeholder="Road/ Post Office..." class="o_address_street"/>
                                     <field name="per_city" placeholder="Area/Thana" class="o_address_city"/>
-                                    <field name="per_state_id" class="o_address_state" placeholder="City/Town/District" options='{"no_open": True}'/>
+                                    <field name="per_state_id" class="o_address_state" placeholder="City/Town/District" options='{"no_open": True}' domain="[('country_id','=',country_id)]" />
                                     <field name="per_zip" placeholder="Post Code" class="o_address_zip"/>
                                     <field name="per_country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
                                 </div>
