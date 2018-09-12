@@ -143,27 +143,27 @@
                         </group>
                      </page>
                          <page string="Parent Details">
-                             <group col="6">
-                                 <separator string="Father's Information" colspan="6"/>
-                                 <field name="father_NID"/>
-                                 <field name="father_car_no"/>
-                                 <field name="father_mobile"/>
-                                 <field name="father_name" nolabel='1' placeholder=" Father's Name" colspan="2"/>
+                             <group col="4">
+                                 <separator string="Father's Information" colspan="3"/>
+                                 <field name="father_NID" colspan="4"/>
+                                 <field name="father_mobile" />
+                                  <field name="father_car_no"/>
+                                 <field name="father_name"  nolabel='1' placeholder=" Father's Name" colspan="3"/>
                                  <!--<field name="father_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>-->
                                  <!--<field name="father_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>-->
-                                 <field name="father_name_b" nolabel='1' placeholder="পিতার নাম" colspan="2"/>
+                                 <field name="father_name_b" nolabel='1'  placeholder="পিতার নাম" colspan="3"/>
                                  <!--<field name="father_m_name_b" nolabel='1' placeholder="নামের মধ্যাংশ" colspan="2"/>-->
                                  <!--<field name="father_l_name_b" nolabel='1' placeholder="নামের শেষ অংশ" colspan="2"/>-->
                              </group>
-                             <group col="6">
-                                 <separator string="Mother's Information" colspan="6"/>
+                             <group >
+                                 <separator string="Mother's Information" />
                                  <field name="mother_NID"/>
                                  <field name="mother_car_no"/>
                                  <field name="mother_mobile"/>
-                                 <field name="mother_name" nolabel='1' placeholder="Mother's Name" colspan="2"/>
-                                 <!--<field name="mother_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>-->
+                                 <field name="mother_name"  placeholder="Mother's Name" />
+                                 <!--<field name="mother_m_name" nolabel='1' placeholder="Middle Name" />-->
                                  <!--<field name="mother_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>-->
-                                 <field name="mother_name_b" nolabel='1' placeholder="মায়ের নাম" colspan="2"/>
+                                 <field name="mother_name_b"  placeholder="মায়ের নাম"/>
                                  <!--<field name="mother_m_name_b" nolabel='1' placeholder="নামের মধ্যাংশ" colspan="2"/>-->
                                  <!--<field name="mother_l_name_b" nolabel='1' placeholder="নামের শেষ অংশ" colspan="2"/>-->
                              </group>

@@ -26,6 +26,7 @@ class StudentApplication(models.Model):
     # last_name_b = fields.Char("নামের শেয়াংশ",required=True)
     already_student=fields.Boolean("Allready Admitted?")
     student_id=fields.Char('Student Id')
+    roll_no=fields.Integer('Roll No')
     student_category=fields.Selection([('I',"Internal"),
                                        ('E', "External")],'Category')
     prev_school = fields.Many2one('education.institute', string='Previous Institution',
@@ -78,7 +79,7 @@ class StudentApplication(models.Model):
     # guardian_m_name = fields.Char(string="guardian's Middle Name", help="Proud to say my guardian is")
     # guardian_l_name = fields.Char(string="guardian's Last Name", help="Proud to say my guardian is",required=True)
     guardian_NID = fields.Char(string="guardian's NID", help="guardian's NID",required=True)
-    guardian_mobile = fields.Integer(string="guardian's Mobile No", help="guardian's Mobile No")
+    guardian_mobile = fields.Char(string="guardian's Mobile No", help="guardian's Mobile No")
     guardian_car_no = fields.Char(string="guardian's Car No", help="guardian's Car No")
 
     # guardian_name = fields.Many2one('res.partner', string="Guardian", domain=[('is_parent', '=', True)], required=True,
@@ -92,7 +93,7 @@ class StudentApplication(models.Model):
     # father_m_name_b = fields.Char(string="বাবার নাম মাঝের অংশ", help="Proud to say my father is")
     # father_l_name_b = fields.Char(string="Father's Last Name", help="Proud to say my father is",required=True)
     father_NID = fields.Char(string="Father's NID", help="Father's NID",required=True)
-    father_mobile = fields.Integer(string="Father's Mobile No", help="Father's Mobile No")
+    father_mobile = fields.Char(string="Father's Mobile No", help="Father's Mobile No")
     father_car_no = fields.Char(string="Father's Car No", help="Father's Car No")
     # father_name = fields.Many2one('res.partner', string="Father", domain=[('is_parent', '=', True)], required=True, help="Proud to say my father is")
     # mother_name = fields.Char(string="Mother", help="My mother's name is")
@@ -105,7 +106,7 @@ class StudentApplication(models.Model):
     # mother_l_name = fields.Char(string="mother's Last Name", help="Proud to say my mother is",required=True)
     # mother_l_name_b = fields.Char(string="মায়ের শেষ নাম", help="Proud to say my mother is",required=True)
     mother_NID = fields.Char(string="mother's NID", help="mother's NID",required=True)
-    mother_mobile = fields.Integer(string="mother's Mobile No", help="mother's Mobile No")
+    mother_mobile = fields.Char(string="mother's Mobile No", help="mother's Mobile No")
     mother_car_no = fields.Char(string="mother's Car No", help="mother's Car No")
 
     religion_id = fields.Many2one('religion.religion', string="Religion", help="My Religion is ")
