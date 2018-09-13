@@ -46,6 +46,7 @@
         'reports/exam_marksheet.xml',
         'data/res.country.state.csv',
         'data/religion.religion.csv',
+        'data/education.subject.csv',
     ],
     'demo': [
         'demo/education_data.xml',
