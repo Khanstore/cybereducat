@@ -36,7 +36,7 @@ class EducationStudent(models.Model):
             if not recs:
                 recs = self.search([('ad_no', operator, name)] + (args or []), limit=limit)
             if not recs:
-                recs = self.search([('ad_no', operator, name)] + (args or []), limit=limit)
+                recs = self.search([('student_id', operator, name)] + (args or []), limit=limit)
             return recs.name_get()
         return super(EducationStudent, self).name_search(name, args=args, operator=operator, limit=limit)
 
@@ -89,7 +89,11 @@ class EducationStudent(models.Model):
     nationality = fields.Many2one('res.country', string='Nationality', ondelete='restrict',default=19,)
     application_id = fields.Many2one('education.application', string="Application No")
     class_history_ids = fields.One2many('education.class.history', 'student_id', string="Application No")
-    student_id=fields.Char('Student ID')
+
+    student_id=fields.Char('Student Id')
+    section_id=fields.Integer('section_id')
+    group_id=fields.Integer('Group')
+    roll_no=fields.Integer('Roll No')
     _sql_constraints = [
         ('ad_no', 'unique(ad_no)', "Another Student already exists with this admission number!"),
     ]

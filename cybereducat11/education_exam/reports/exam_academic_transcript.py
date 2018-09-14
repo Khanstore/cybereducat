@@ -29,7 +29,7 @@ class acdemicTranscript(models.AbstractModel):
             subjs.extend(subj)
         return subjs
     def get_gradings(self,obj):
-        grading=self.env['education.result.grading'].search([('id','>','0')])
+        grading=self.env['education.result.grading'].search([('id','>','0')],order='min_per desc',)
         grades=[]
         for grade in grading:
             grades.extend(grade)

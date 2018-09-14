@@ -63,7 +63,7 @@
                 <field name="ad_no"/>
                 <field name="student_id"/>
                 <field name="name"/>
-                <field name="last_name"/>
+                <!--<field name="last_name"/>-->
                 <field name="gender"/>
                 <field name="date_of_birth"/>
                 <field name="blood_group"/>
@@ -95,12 +95,12 @@
                             <table>
                                 <tr>
                                     <td style="padding-right:10px;"><field name="name" placeholder="First Name" required="1"/></td>
-                                    <td style="padding-right:10px;"><field name="middle_name" placeholder="Middle Name" /></td>
-                                    <td style="padding-right:10px;"><field name="last_name" placeholder="Last Name" required="1"/></td>
+                                    <!--<td style="padding-right:10px;"><field name="middle_name" placeholder="Middle Name" /></td>-->
+                                    <!--<td style="padding-right:10px;"><field name="last_name" placeholder="Last Name" required="1"/></td>-->
                                 </tr>
                                 <tr>
                                     <td style="padding-right:10px;"><field name="name_b" placeholder="নামের প্রথম অংশ" required="1"/></td>
-                                    <td style="padding-right:10px;"><field name="middle_name_b" placeholder="নামের মধ্যাংশ" /></td>
+                                    <!--<td style="padding-right:10px;"><field name="middle_name_b" placeholder="নামের মধ্যাংশ" /></td>-->
                                     <!--<td style="padding-right:10px;"><field name="last_name_b" placeholder="নামের শেষাংশ" required="1"/></td>-->
                                 </tr>
                             </table>
@@ -132,7 +132,7 @@
                                     <field name="gender"/>
                                     <field name="date_of_birth"/>
                                     <field name="blood_group"/>
-                                    <field name="caste_id"/>
+                                    <!--<field name="caste_id"/>-->
                                     <field name="nationality"/>
                                 </group>
                             </group>
@@ -202,18 +202,18 @@
         <field name="arch" type="xml">
             <search string="Search Students">
                 <field name="class_id"/>
-                <field name="medium"/>
+                <!--<field name="medium"/>-->
                 <!--<field name="sec_lang"/>-->
                 <field name="gender"/>
                 <field name="religion_id"/>
-                <field name="caste_id"/>
+                <!--<field name="caste_id"/>-->
                 <field name="mother_tongue"/>
                 <group expand='0' string='Group by...'>
                     <filter string='Class' icon="fa-user" domain="[]" context="{'group_by' : 'class_id'}"/>
                     <filter string='Gender' icon="fa-genderless" domain="[]" context="{'group_by' : 'gender'}"/>
                     <filter string='Medium' icon="fa-medium" domain="[]" context="{'group_by' : 'medium'}"/>
                     <filter string='Religion' icon="fa-pencil-square-o" domain="[]" context="{'group_by' : 'religion_id'}"/>
-                    <filter string='Caste' icon="fa-pencil-square-o" domain="[]" context="{'group_by' : 'caste_id'}"/>
+                    <!--<filter string='Caste' icon="fa-pencil-square-o" domain="[]" context="{'group_by' : 'caste_id'}"/>-->
                     <filter string='Mother Tongue' icon="fa fa-language" domain="[]" context="{'group_by' : 'mother_tongue'}"/>
                </group>
            </search>

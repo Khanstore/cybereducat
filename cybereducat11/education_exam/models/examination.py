@@ -69,7 +69,7 @@ class EducationExam(models.Model):
 
             subjects=self.env['education.syllabus'].search([('class_id','=',rec.class_id.id),('academic_year','=',rec.academic_year.id)])  #.search([('class_id', '=', self.id)])
             for subject in subjects :
-                data={'subject_id': subject.subject_id.id,
+                data={'subject_id': subject.id,
                       'exam_id': rec.id,
                       'time_from': '10.30',
                       'time_to': '12.30',

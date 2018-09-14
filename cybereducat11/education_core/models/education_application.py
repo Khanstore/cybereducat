@@ -25,8 +25,14 @@ class StudentApplication(models.Model):
     # middle_name_b = fields.Char("নামের মধ্যাংশ")
     # last_name_b = fields.Char("নামের শেয়াংশ",required=True)
     already_student=fields.Boolean("Allready Admitted?")
+    ############
+    #these are for import data
     student_id=fields.Char('Student Id')
+    section_id=fields.Integer('section_id')
+    group_id=fields.Integer('Group')
     roll_no=fields.Integer('Roll No')
+
+    ###########
     student_category=fields.Selection([('I',"Internal"),
                                        ('E', "External")],'Category')
     prev_school = fields.Many2one('education.institute', string='Previous Institution',
@@ -252,7 +258,11 @@ class StudentApplication(models.Model):
                 'mother_tongue': rec.mother_tongue.id,
                 'admission_class': rec.register_id.standard.id,
                 'company_id': rec.company_id.id,
-                'student_id': rec.student_id
+                'student_id': rec.student_id,
+                'section_id': rec.section_id,
+                'group_id': rec.group_id,
+                'roll_no': rec.roll_no,
+
             }
             if not rec.is_same_address:
                 pass
