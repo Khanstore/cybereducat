@@ -3,13 +3,15 @@
 
 from odoo import fields, models, api, _
 from odoo.exceptions import ValidationError
-
+from datetime import date, datetime
 
 class EducationStudentClass(models.Model):
     _name = 'education.student.class'
     _description = 'Assign the Students to Class'
     _inherit = ['mail.thread']
-    _rec_name = 'class_id'
+    # _rec_name = 'class_assign_name'
+    name = fields.Char('Class Assign Register', compute='get_class_assign_name')
+    assign_date=fields.Date(default=fields.Date.today)
 
     class_id = fields.Many2one('education.class', string='Class')
     student_list = fields.One2many('education.student.list', 'connect_id', string="Students")
@@ -17,6 +19,42 @@ class EducationStudentClass(models.Model):
     assigned_by = fields.Many2one('res.users', string='Assigned By', default=lambda self: self.env.uid)
     state = fields.Selection([('draft', 'Draft'), ('done', 'Done')],
                              string='State', required=True, default='draft', track_visibility='onchange')
+
+    @api.multi
+    def get_class_assign_name(self):
+        for rec in self:
+            rec.name=rec.admitted_class.name + '(assigned on '+ rec.assign_date +')'
+    @api.multi
+    def assign_class(self):
+        max_roll = self.env['education.class.history'].search([], order='roll_no desc', limit=1)
+        if max_roll.roll_no:
+            next_roll = max_roll.roll_no
+        else:
+            next_roll = 0
+
+        for rec in self:
+
+            if not self.student_list:
+                raise ValidationError(_('No Student Lines'))
+            for line in self.student_list:
+                next_roll = next_roll + 1
+                st=self.env['education.student'].search([('id','=',line.student_id.id)])
+                st.roll_no = next_roll
+                st.class_id = rec.admitted_class.id
+                line.roll_no=next_roll
+
+                # create student history
+
+                self.env['education.class.history'].create({'academic_year_id': rec.admitted_class.academic_year_id.id,
+                                                            'class_id': rec.admitted_class.id,
+                                                            'student_id': line.student_id.id,
+                                                            'roll_no': next_roll
+                                                            })
+
+            self.write({
+                'state': 'done'
+                })
+
 
     @api.multi
     def unlink(self):
@@ -54,4 +92,6 @@ class EducationStudentList(models.Model):
 
     connect_id = fields.Many2one('education.student.class', string='Class')
     student_id = fields.Many2one('education.student', string='Student')
-    class_id = fields.Many2one('education.class', string='Class')
+    class_id = fields.Many2one('education.class', string='Level')
+    section_id = fields.Many2one('education.class.division', string='Class')
+    roll_no = fields.Integer( string='Roll No')

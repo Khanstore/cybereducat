@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="import_previous_student" model="ir.ui.view">
+        <field name="name">import.previous.student</field>
+        <field name="model">education.import.previous.student</field>
+        <field name="arch" type="xml">
+            <form string=">import">
+                <group class="oe_title">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="import_qty"/>
+                    <field name="import_standard"/>
+                    <field name="assign_class"/>
+                </group>
+                <field name="students_to_assign">
+                    <tree>
+                        <field name="application_no"/>
+                        <field name="name"/>
+                        <field name="roll_no"/>
+
+                    </tree>
+                </field>
+
+                <footer>
+                    <button name="import_students" string="Import" type="object" class="btn btn-sm btn-primary"/>
+                    <button string="Cancel" class="btn btn-sm btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+
+</odoo>

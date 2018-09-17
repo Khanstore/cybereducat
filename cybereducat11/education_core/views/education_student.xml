@@ -94,7 +94,7 @@
                         <h2>
                             <table>
                                 <tr>
-                                    <td style="padding-right:10px;"><field name="name" placeholder="First Name" required="1"/></td>
+                                    <td style="padding-right:10px;"><field name="name" placeholder="Name" required="1"/></td>
                                     <!--<td style="padding-right:10px;"><field name="middle_name" placeholder="Middle Name" /></td>-->
                                     <!--<td style="padding-right:10px;"><field name="last_name" placeholder="Last Name" required="1"/></td>-->
                                 </tr>
@@ -112,6 +112,7 @@
                              <group>
                                 <group>
                                     <field name="class_id"/>
+                                    <field name="roll_no"/>
                                     <!--<field name="sec_lang"/>-->
                                 </group>
                                 <group>

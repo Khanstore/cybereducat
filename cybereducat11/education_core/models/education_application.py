@@ -28,9 +28,10 @@ class StudentApplication(models.Model):
     ############
     #these are for import data
     student_id=fields.Char('Student Id')
-    section_id=fields.Integer('section_id')
-    group_id=fields.Integer('Group')
+    section=fields.Char('Section')
+    group=fields.Char('Group')
     roll_no=fields.Integer('Roll No')
+    import_id=fields.Many2one('import.previous.student')
 
     ###########
     student_category=fields.Selection([('I',"Internal"),
@@ -259,9 +260,10 @@ class StudentApplication(models.Model):
                 'admission_class': rec.register_id.standard.id,
                 'company_id': rec.company_id.id,
                 'student_id': rec.student_id,
-                'section_id': rec.section_id,
-                'group_id': rec.group_id,
-                'roll_no': rec.roll_no,
+                'section_id': rec.section,
+                'group_id': rec.group,
+                'import_roll_no': rec.roll_no,
+                'application_no': rec.application_no,
 
             }
             if not rec.is_same_address:
