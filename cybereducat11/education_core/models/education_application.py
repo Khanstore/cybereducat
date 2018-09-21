@@ -28,9 +28,11 @@ class StudentApplication(models.Model):
     ############
     #these are for import data
     student_id=fields.Char('Student Id')
+    level=fields.Integer('Level')
     section=fields.Char('Section')
     group=fields.Char('Group')
     roll_no=fields.Integer('Roll No')
+    Batch=fields.Char('Batch')
     import_id=fields.Many2one('import.previous.student')
 
     ###########
@@ -82,7 +84,7 @@ class StudentApplication(models.Model):
     guardian_relation = fields.Many2one('gurdian.student.relation', string="Relation to Guardian",  required=True,
                                         help="Tell us the Relation toyour guardian")
     #### guardian Details
-    guardian_name = fields.Char(string="guardian's First Name", help="Proud to say my guardian is",required=True)
+    guardian_name = fields.Char(string="guardian's Name", help="Proud to say my guardian is",required=True)
     # guardian_m_name = fields.Char(string="guardian's Middle Name", help="Proud to say my guardian is")
     # guardian_l_name = fields.Char(string="guardian's Last Name", help="Proud to say my guardian is",required=True)
     guardian_NID = fields.Char(string="guardian's NID", help="guardian's NID",required=True)
@@ -93,10 +95,10 @@ class StudentApplication(models.Model):
     #                                 help="Tell us who will take care of you")
     description = fields.Text(string="Note")
     #### Father Details
-    father_name = fields.Char(string="Father's First Name", help="Proud to say my father is",required=True)
+    father_name = fields.Char(string="Father's Name", help="Proud to say my father is",required=True)
     # father_m_name = fields.Char(string="বাবার নাম মধ্য অংশ", help="Proud to say my father is")
     # father_l_name = fields.Char(string="Father's Last Name", help="Proud to say my father is",required=True)
-    father_name_b = fields.Char(string="বাবার নাম প্রথম অংশ", help="Proud to say my father is",required=True)
+    father_name_b = fields.Char(string="বাবার নাম", help="Proud to say my father is",required=True)
     # father_m_name_b = fields.Char(string="বাবার নাম মাঝের অংশ", help="Proud to say my father is")
     # father_l_name_b = fields.Char(string="Father's Last Name", help="Proud to say my father is",required=True)
     father_NID = fields.Char(string="Father's NID", help="Father's NID",required=True)
@@ -106,8 +108,8 @@ class StudentApplication(models.Model):
     # mother_name = fields.Char(string="Mother", help="My mother's name is")
     # mother_name = fields.Many2one('res.partner', string="Mother", domain=[('is_parent', '=', True)], required=True, help="My mother name is")
     #### Mother Details
-    mother_name = fields.Char(string="mother's First Name", help="Proud to say my mother is",required=True)
-    mother_name_b = fields.Char(string="মা এর প্রথম নাম", help="Proud to say my mother is",required=True)
+    mother_name = fields.Char(string="mother's Name", help="Proud to say my mother is",required=True)
+    mother_name_b = fields.Char(string="মা এর নাম", help="Proud to say my mother is",required=True)
     # mother_m_name = fields.Char(string="mother's Middle Name", help="Proud to say my mother is")
     # mother_m_name_b = fields.Char(string="মা এর মধ্যনাম", help="Proud to say my mother is")
     # mother_l_name = fields.Char(string="mother's Last Name", help="Proud to say my mother is",required=True)
@@ -134,6 +136,9 @@ class StudentApplication(models.Model):
     state = fields.Selection([('draft', 'Draft'), ('verification', 'Verify'),
                               ('approve', 'Approve'), ('reject', 'Reject'), ('done', 'Done')],
                              string='State', required=True, default='draft', track_visibility='onchange')
+
+
+
 
     @api.onchange('guardian_relation')
     def guardian_relation_changed(self):
@@ -260,8 +265,8 @@ class StudentApplication(models.Model):
                 'admission_class': rec.register_id.standard.id,
                 'company_id': rec.company_id.id,
                 'student_id': rec.student_id,
-                'section_id': rec.section,
-                'group_id': rec.group,
+                # 'section_id': rec.section,
+                # 'group_id': rec.group,
                 'import_roll_no': rec.roll_no,
                 'application_no': rec.application_no,
 

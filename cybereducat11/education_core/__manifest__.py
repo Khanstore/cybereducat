@@ -45,6 +45,8 @@
         'reports/student_application_report.xml',
         'reports/faculty_id_card.xml',
         'reports/exam_marksheet.xml',
+        'data/education.subject.csv',
+        'data/education.syllabus.csv',
         'data/res.country.state.csv',
         'data/religion.religion.csv',
     ],

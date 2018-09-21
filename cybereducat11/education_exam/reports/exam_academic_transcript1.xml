@@ -2,7 +2,7 @@
 <odoo>
     <data>
 
-        <template id="report_exam_academic_transcript">
+        <template id="report_exam_academic_transcript1">
             <t t-call="web.html_container">
                 <t t-foreach="get_students(docs)" t-as="student">
 
@@ -44,6 +44,7 @@
                                     </div>
 
                                 </div>
+
                                 <div class="row">
                                      <div class="right" padding-top="10px">
                                         <table>
@@ -68,41 +69,51 @@
                                     </div>
 
                                 </div>
+
                                 <div class="row">
                                     <div class="left">
                                          <table>
                                             <tr>
                                                 <t t-foreach="get_exams(docs)" t-as="exam">
-                                                <td>
-                                        <table><tr>
-                                            <t t-if="exam_first"> <td rowspan="2">Subject</td><td rowspan="2">Paper</td><td rowspan="2">Full Mark</td></t>
-        <td colspan="9"> <strong> <span t-field="exam.exam_type"/> </strong></td></tr><tr>
-                <td>Tut</td><td>Sub</td><td>Obj</td><td>Prac</td><td>Total</td><td>Highest</td><td>LG</td><td>GP</td><td>GPA</td></tr>
-                      <t t-foreach="get_subjects(exam)" t-as="s" >
-                          <tr><t t-if="exam_first"><td><span t-field="s.subject_id.display"/> </td><td><span t-field="s.subject_id.paper"/> </td><td><span t-field="s.max_mark"/> </td></t>
-                          <td ><strong> <span t-field="s.tut_mark"/> </strong></td>
-                                            <td ><strong> <span t-field="s.subj_mark"/> </strong></td>
-                                            <td ><strong> <span t-field="s.obj_mark"/> </strong></td>
-                                            <td ><strong> <span t-field="s.prac_mark"/> </strong></td>
-                                            <td ><strong> <span t-field="s.mark_scored"/> </strong></td>
-                                            <td ><strong> Highest </strong></td>
-                                            <td ><strong><span t-field="s.grade"/> </strong></td>
-                                            <td ><strong> <span t-field="s.score"/> </strong></td>
-                                            <td ><strong> GPA </strong></td>
-                          </tr>
-                      </t>
+                                                    <t t-if="exam_first">
+                                                        <td rowspan="2">Subject</td>
+                                                        <td rowspan="2">Paper</td>
+                                                        <td rowspan="2">Full Mark</td>
+                                                    </t>
+                                                    <td colspan="9"> <strong> <span t-field="exam.exam_type"/> </strong></td>
 
+                                                </t>
+                                            </tr>
+                                             <tr>
+                                                <t t-foreach="get_exams(docs)" t-as="exam">
+                                                   <td>Tut</td><td>Sub</td><td>Obj</td><td>Prac</td><td>Total</td><td>Highest</td><td>LG</td><td>GP</td><td>GPA</td>
+                                                </t>
+                                            </tr>
+                                             <tr>
 
-                </table>
-            </td>
-         </t>
-    </tr>
-</table>
+                                                <t t-foreach="get_exams(docs)" t-as="exam">
+                                                    <t t-foreach="get_subjects(exam)" t-as="s" >
 
+                                                            <t t-if="exam_first"><td><span t-field="s.subject_id.display"/> </td><td><span t-field="s.subject_id.paper"/> </td>
+                                                                <td><span t-field="s.max_mark"/> </td>
+                                                            </t>
+                                                            <td ><strong> <span t-field="s.tut_mark"/> </strong></td>
+                                                            <td ><strong> <span t-field="s.subj_mark"/> </strong></td>
+                                                            <td ><strong> <span t-field="s.obj_mark"/> </strong></td>
+                                                            <td ><strong> <span t-field="s.prac_mark"/> </strong></td>
+                                                            <td ><strong> <span t-field="s.mark_scored"/> </strong></td>
+                                                            <td ><strong> Highest </strong></td>
+                                                            <td ><strong><span t-field="s.grade"/> </strong></td>
+                                                            <td ><strong> <span t-field="s.score"/> </strong></td>
+                                                            <td ><strong> GPA </strong></td>
+
+                                                    </t>
+                                                </t>
+                                            </tr>
+                                         </table>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </t>
                 </t>

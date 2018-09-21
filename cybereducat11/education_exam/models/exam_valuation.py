@@ -230,3 +230,19 @@ class StudentsExamValuationLine(models.Model):
     def calculate_marks(self):
         for rec in self:
             rec.mark_scored=rec.tut_mark+ rec.obj_mark+rec.subj_mark+rec.prac_mark
+            if rec.tut_mark<0:
+                raise UserError(_('Mark Scored must be greater than Zero'))
+            elif rec.tut_mark>rec.valuation_id.tut_mark:
+                raise UserError(_('Mark Scored must be less than Max Mark'))
+            if rec.obj_mark<0:
+                raise UserError(_('Mark Scored must be greater than Zero'))
+            elif rec.obj_mark>rec.valuation_id.obj_mark:
+                raise UserError(_('Mark Scored must be less than Max Mark'))
+            if rec.subj_mark<0:
+                raise UserError(_('Mark Scored must be greater than Zero'))
+            elif rec.subj_mark>rec.valuation_id.subj_mark:
+                raise UserError(_('Mark Scored must be less than Max Mark'))
+            if rec.prac_mark<0:
+                raise UserError(_('Mark Scored must be greater than Zero'))
+            elif rec.prac_mark>rec.valuation_id.prac_mark:
+                raise UserError(_('Mark Scored must be less than Max Mark'))

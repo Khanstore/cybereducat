@@ -7,11 +7,26 @@ from datetime import date,datetime
 class importAllStudent(models.Model):
     _name='education.import.previous.student'
     name=fields.Char('Namee')
+
     date=fields.Date(default=fields.Date.today)
     import_qty=fields.Integer('No of Student to Import')
     import_standard=fields.Many2one('education.class',"Import student Of")
+    import_group=fields.Selection([('science','Science'),('Humanity','Humanity'),('Comm','Commerce')],'From Group')
+    import_section=fields.Selection([('a','A'),('b','B'),('c','C'),('d','D')],'From Section')
     assign_class=fields.Many2one('education.class.division',"Assign Student to")
     students_to_assign=fields.One2many('education.application','import_id',"Student List")
+    state=fields.Selection([(1,'draft'),(2,'done')],default='1')
+
+
+    # @api.onchange('import_standard')
+    # def get_student_to_import(self):
+    #     for rec in self:
+    #         if self.import_standard:
+    #             applications=self.env['education.application'].search([('register_id.standard','=',self.import_standard)])
+    #             if self.student_to_assign:
+    #                 applications=self.env['education.application'].search([register_id('section','=',self.section),('group','=',self.group)])
+    #
+
 
 
     @api.multi

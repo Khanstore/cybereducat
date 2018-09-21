@@ -203,7 +203,7 @@
         <field name="arch" type="xml">
             <search string="Search Students">
                 <field name="class_id"/>
-                <!--<field name="medium"/>-->
+                <field name="student_id"/>
                 <!--<field name="sec_lang"/>-->
                 <field name="gender"/>
                 <field name="religion_id"/>
@@ -226,7 +226,7 @@
         <field name="res_model">education.student</field>
         <field name="type">ir.actions.act_window</field>
         <field name="view_type">form</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">tree,kanban,form</field>
         <field name="search_view_id" ref="student_search"/>
         <field name="context">{'create': False}</field>
         <field name="help" type="html">

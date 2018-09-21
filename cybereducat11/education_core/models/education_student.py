@@ -51,7 +51,7 @@ class EducationStudent(models.Model):
         'res.partner', string='Partner', required=True, ondelete="cascade")
     middle_name = fields.Char(string='Middle Name')
     last_name = fields.Char(string='Last Name')
-    name_b = fields.Char("নামের প্রথম অংশ")
+    name_b = fields.Char("নাম")
     middle_name_b = fields.Char("নামের মধ্যাংশ")
     last_name_b = fields.Char("নামের শেষাংশ")
     application_no = fields.Char(string="Application No")

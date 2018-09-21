@@ -70,8 +70,7 @@ class EducationStudentClass(models.Model):
             for line in rec.student_list:
                 line.unlink()
             students = self.env['education.student'].search([
-                ('admission_class', '=', rec.class_id.id),
-                ('class_id', '=', False)])
+                ('admission_class', '=', rec.class_id.id)])
             if not students:
                 raise ValidationError(_('No Students Available.. !'))
             values = []
