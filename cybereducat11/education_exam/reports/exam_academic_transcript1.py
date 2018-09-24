@@ -15,17 +15,32 @@ class acdemicTranscript1(models.AbstractModel):
 
         return obj
     def get_students(self,objects):
+
         student=[]
         if objects.specific_student==True :
-            for stu in objects.student:
+            student_list = self.env['education.class.history'].search([('student_id.id', '=', objects.student.id)])
+            for stu in student_list:
+                student.extend(stu)
+        elif objects.section:
+            student_list=self.env['education.class.history'].search([('class_id.id', '=', objects.section.id)])
+            for stu in student_list:
+                student.extend(stu)
+        elif objects.level:
+            student_list = self.env['education.class.history'].search([('level.id', '=', objects.level.id),
+                                                                       ('academic_year_id.id', '=', objects.academic_year.id)])
+            for stu in student_list:
                 student.extend(stu)
 
         return student
 
-    def get_subjects(self, obj):
-        object=self.env['education.exam.results'].browse(obj.id)
+    def get_subjects(self,student):
+        object=self.env['education.class.history'].search([('id', '=', student.id)])
         subjs = []
-        for subj in object.subject_line:
+        for subj in object.compulsory_subjects:
+            subjs.extend(subj)
+        for subj in object.selective_subjects:
+            subjs.extend(subj)
+        for subj in object.optional_subjects:
             subjs.extend(subj)
         return subjs
     def get_gradings(self,obj):
@@ -34,7 +49,16 @@ class acdemicTranscript1(models.AbstractModel):
         for grade in grading:
             grades.extend(grade)
         return grades
+    def get_marks(self,exam,subject,student):
+        marks=self.env['education.exam.valuation'].search([('exam_id','=',exam.id),('subject_id','=',subject.id)])
+        mark=[]
+        for result in marks.valuation_line:
+            if result.student_id.id==student.id:
+                mark.extend(result)
+                # if result.student_id = student.id:
+                #     mark.append(result.id)
 
+        return mark
 
     def get_date(self, date):
         date1 = datetime.strptime(date, "%Y-%m-%d")
@@ -43,7 +67,6 @@ class acdemicTranscript1(models.AbstractModel):
     @api.model
     def get_report_values(self, docids, data=None):
         docs = self.env['academic.transcript'].browse(docids)
-
         return {
             'doc_model': 'education.exam.results',
             'docs': docs,
@@ -52,6 +75,7 @@ class acdemicTranscript1(models.AbstractModel):
             'get_exams': self.get_exams,
             'get_subjects': self.get_subjects,
             'get_gradings':self.get_gradings,
+            'get_marks':self.get_marks,
             'get_date': self.get_date,
             # 'get_total': self.get_total,
         }

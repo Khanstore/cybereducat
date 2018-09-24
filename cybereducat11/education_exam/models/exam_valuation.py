@@ -35,7 +35,15 @@ class EducationExamValuation(models.Model):
                                     related='division_id.academic_year_id', store=True)
     company_id = fields.Many2one('res.company', string='Company',
                                  default=lambda self: self.env['res.company']._company_default_get())
-
+    @api.onchange('exam_id','division_id')
+    def domain4subject(self):
+        domain = []
+        for rec in self:
+            if rec.division_id.id:
+                result_created=self.env['education.exam.valuation'].search([('exam_id.id','=',rec.exam_id.id),('division_id.id','=',rec.division_id.id)])
+                for res in result_created:
+                    domain.append(res.subject_id.id)
+        return {'domain': {'subject_id': [('id', '!=', domain)]}}
     @api.onchange('tut_mark','tut_pass_mark','subj_mark','subj_pass_mark','obj_mark','obj_pass_mark','prac_mark','prac_pass_mark')
     def calculate_marks(self):
         for rec in self:
@@ -200,10 +208,10 @@ class StudentsExamValuationLine(models.Model):
     student_id = fields.Many2one('education.student', string='Students')
     student_name = fields.Char(string='Students')
     mark_scored = fields.Float(string='Mark',compute='calculate_marks')
-    tut_mark=fields.Float(string='Tutorial')
-    subj_mark=fields.Float(string='Subjective')
-    obj_mark=fields.Float(string='Objective')
-    prac_mark=fields.Float(string='Practical')
+    tut_mark=fields.Float(string='Tutorial',default=0)
+    subj_mark=fields.Float(string='Subjective' ,default=0)
+    obj_mark=fields.Float(string='Objective',default=0)
+    prac_mark=fields.Float(string='Practical',default=0)
     pass_or_fail = fields.Boolean(string='Pass/Fail')
     valuation_id = fields.Many2one('education.exam.valuation', string='Valuation Id')
     company_id = fields.Many2one('res.company', string='Company',
@@ -233,16 +241,16 @@ class StudentsExamValuationLine(models.Model):
             if rec.tut_mark<0:
                 raise UserError(_('Mark Scored must be greater than Zero'))
             elif rec.tut_mark>rec.valuation_id.tut_mark:
-                raise UserError(_('Mark Scored must be less than Max Mark'))
+                raise UserError(_('Mark Scored must be less than Max Tutorial Mark'))
             if rec.obj_mark<0:
                 raise UserError(_('Mark Scored must be greater than Zero'))
             elif rec.obj_mark>rec.valuation_id.obj_mark:
-                raise UserError(_('Mark Scored must be less than Max Mark'))
+                raise UserError(_('Mark Scored must be less than Max Objective Mark'))
             if rec.subj_mark<0:
                 raise UserError(_('Mark Scored must be greater than Zero'))
             elif rec.subj_mark>rec.valuation_id.subj_mark:
-                raise UserError(_('Mark Scored must be less than Max Mark'))
+                raise UserError(_('Mark Scored must be less than Max Subjective Mark'))
             if rec.prac_mark<0:
                 raise UserError(_('Mark Scored must be greater than Zero'))
             elif rec.prac_mark>rec.valuation_id.prac_mark:
-                raise UserError(_('Mark Scored must be less than Max Mark'))
+                raise UserError(_('Mark Scored must be less than Max Practical Mark'))

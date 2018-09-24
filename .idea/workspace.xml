@@ -2,22 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e7ca7b-3773-443f-a1b8-a891ba76ac74" name="Default" comment="Mark distribution Complete">
-      <change afterPath="$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cybereducat11/education_core/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_core/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cybereducat11/education_core/data/education.subject.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_core/data/education.subject.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cybereducat11/education_core/models/education_application.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_core/models/education_application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cybereducat11/education_core/models/education_student.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_core/models/education_student.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cybereducat11/education_core/models/education_student_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_core/models/education_student_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cybereducat11/education_core/models/importpreviousdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_core/models/importpreviousdata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cybereducat11/education_core/views/education_student.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_core/views/education_student.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cybereducat11/education_exam/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_exam/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cybereducat11/education_core/data/education.class.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_core/data/education.class.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cybereducat11/education_core/models/education_class_division.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_core/models/education_class_division.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cybereducat11/education_core/models/education_subject.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_core/models/education_subject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cybereducat11/education_core/views/education_class.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_core/views/education_class.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cybereducat11/education_exam/models/exam_valuation.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_exam/models/exam_valuation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cybereducat11/education_exam/reports/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_exam/reports/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cybereducat11/education_exam/reports/report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_exam/reports/report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cybereducat11/education_exam/models/examination.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_exam/models/examination.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cybereducat11/education_exam/views/exam_valuation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_exam/views/exam_valuation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cybereducat11/education_exam/wizards/academic_transcript_wizard.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_exam/wizards/academic_transcript_wizard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cybereducat11/education_exam/wizards/academic_transcript_wizard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cybereducat11/education_exam/wizards/academic_transcript_wizard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odoo/addons/web/views/database_manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/odoo/addons/web/views/database_manager.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,49 +27,60 @@
     <session id="-618615798">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.5" value="4" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.open.time.66" value="1" />
+          <entry key="project.open.time.73" value="1" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cfg" value="1" />
+          <entry key="LICENSE" value="1" />
+          <entry key="Makefile" value="1" />
+          <entry key="cfg" value="2" />
+          <entry key="conf" value="1" />
           <entry key="csv" value="15" />
-          <entry key="odoo-bin" value="2" />
-          <entry key="py" value="198" />
-          <entry key="txt" value="1" />
-          <entry key="xml" value="63" />
+          <entry key="in" value="1" />
+          <entry key="md" value="1" />
+          <entry key="odoo-bin" value="3" />
+          <entry key="py" value="223" />
+          <entry key="txt" value="3" />
+          <entry key="xml" value="87" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSV" value="2" />
-          <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="200" />
-          <entry key="XML" value="63" />
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="22" />
+          <entry key="Python" value="226" />
+          <entry key="XML" value="87" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="26" />
-          <entry key="py" value="10802" />
+          <entry key="py" value="13905" />
           <entry key="txt" value="73" />
-          <entry key="xml" value="6898" />
+          <entry key="xml" value="8534" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="99" />
-          <entry key="Python" value="10802" />
-          <entry key="XML" value="6898" />
+          <entry key="Python" value="13905" />
+          <entry key="XML" value="8534" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -82,48 +91,37 @@
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="odoo11" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript.xml">
+        <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/models/examination.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="80" column="54" selection-start-line="80" selection-start-column="54" selection-end-line="80" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="17">
+              <caret line="71" column="24" lean-forward="true" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
               <folding>
-                <marker date="1537511474421" expanded="true" signature="557:563" ph="..." />
-                <marker date="1537511474421" expanded="true" signature="558:563" ph="..." />
+                <marker date="1537790508104" expanded="true" signature="1772:2075" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.py">
+        <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/views/exam_valuation.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+            <state relative-caret-position="146">
+              <caret line="36" column="90" selection-start-line="36" selection-start-column="90" selection-end-line="36" selection-end-column="90" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.xml">
+        <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/views/examination.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="94" column="77" lean-forward="true" selection-start-line="94" selection-start-column="77" selection-end-line="94" selection-end-column="77" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#t#0;n#t#0;n#template#0;n#data#0;n#odoo#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#t#0;n#t#0;n#t#0;n#template#0;n#data#0;n#odoo#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="252">
+              <caret line="30" column="184" selection-start-line="30" selection-start-column="87" selection-end-line="30" selection-end-column="184" />
             </state>
           </provider>
         </entry>
@@ -132,28 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>create_student</find>
-      <find>send_</find>
-      <find>data</find>
-      <find>self</find>
-      <find>get_selec</find>
-      <find>get_sele</find>
-      <find>={}</find>
-      <find>father</find>
-      <find>SMSgateway</find>
-      <find>.Selection</find>
-      <find>.Selec</find>
-      <find>_compute_company_type</find>
-      <find>_get_lang</find>
-      <find>search</find>
-      <find>.selection</find>
-      <find>app</find>
-      <find>append</find>
-      <find>extend</find>
-      <find>exten</find>
-      <find>selection</find>
-      <find>invisible</find>
-      <find>sectionselect</find>
       <find>StudentApplication</find>
       <find>register_id</find>
       <find>get_student</find>
@@ -162,6 +138,28 @@
       <find>level</find>
       <find>attirs</find>
       <find>attrs</find>
+      <find>calculate_marks</find>
+      <find>name</find>
+      <find>noc</find>
+      <find>search</find>
+      <find>education.class.history</find>
+      <find>rela</find>
+      <find>`</find>
+      <find>related=</find>
+      <find>menu_education_student</find>
+      <find>many2ma</find>
+      <find>domai</find>
+      <find>odoo is up</find>
+      <find>menuitem</find>
+      <find>menu_education_class_conf</find>
+      <find>marksheet</find>
+      <find>t-if</find>
+      <find>template</find>
+      <find>not</find>
+      <find>class_division_hider</find>
+      <find>onchange_country_id</find>
+      <find>domain</find>
+      <find>invisible</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -177,6 +175,7 @@
       <dir>C:\odoo11</dir>
       <dir>C:\odoo11\eagleeducation</dir>
       <dir>C:\odoo11\cybereducat11</dir>
+      <dir>C:\odoo11\cybereducat11\</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -190,8 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/odoo/addons/web/doc/_templates/sidebarintro.html" />
-        <option value="$PROJECT_DIR$/cybereducat11/education_core/views/education_class.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/data/ashraf_data.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/eschool/views/students.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/eschool/data/eschool.student.guardian.relation.csv" />
@@ -202,10 +199,8 @@
         <option value="$PROJECT_DIR$/cybereducat11/education_attendances/models/students_attendance.py" />
         <option value="$PROJECT_DIR$/openeducat/openeducat_core/views/subject_view.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/views/education_subject.xml" />
-        <option value="$PROJECT_DIR$/cybereducat11/education_core/models/education_class_division.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_exam/models/exam_results.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/views/education_syllabus.xml" />
-        <option value="$PROJECT_DIR$/cybereducat11/education_exam/views/examination.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/education_exam/Reports/exam_tabulation_sheet.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/education_exam/Reports/report.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/education_exam/Reports/__init__.py" />
@@ -213,34 +208,38 @@
         <option value="$PROJECT_DIR$/cybereducat11/education_exam/__init__.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_exam/views/grade_configuration_view.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/reports/exam_marksheet.xml" />
-        <option value="$PROJECT_DIR$/cybereducat11/education_exam/wizards/academic_transcript_wizard.py" />
-        <option value="$PROJECT_DIR$/cybereducat11/education_exam/wizards/academic_transcript_wizard.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/reports/student_application_report.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/models/education_admission.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/views/education_admission.xml" />
-        <option value="$PROJECT_DIR$/cybereducat11/education_exam/models/examination.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript.py" />
-        <option value="$PROJECT_DIR$/cybereducat11/education_core/models/education_subject.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/models/education_student_class.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/views/education_student_class.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/models/education_documents.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/views/education_class_wizard.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/models/smsgateway.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/models/__init__.py" />
-        <option value="$PROJECT_DIR$/cybereducat11/education_core/models/education_student.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/models/importpreviousdata.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/views/importpreviousstudent.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/models/education_application.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_core/views/education_student.xml" />
-        <option value="$PROJECT_DIR$/cybereducat11/education_core/__manifest__.py" />
-        <option value="$PROJECT_DIR$/cybereducat11/education_exam/views/exam_valuation.xml" />
-        <option value="$PROJECT_DIR$/cybereducat11/education_exam/models/exam_valuation.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript.xml" />
-        <option value="$PROJECT_DIR$/cybereducat11/education_exam/reports/report.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/education_exam/reports/__init__.py" />
         <option value="$PROJECT_DIR$/cybereducat11/education_exam/__manifest__.py" />
-        <option value="$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.xml" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_exam/reports/report.xml" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_core/__manifest__.py" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_exam/wizards/academic_transcript_wizard.py" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_exam/wizards/academic_transcript_wizard.xml" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_core/models/education_student.py" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_core/models/education_class_division.py" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_core/models/education_subject.py" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_core/views/education_class.xml" />
         <option value="$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.py" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_fee/views/fee_register.xml" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.xml" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_exam/views/examination.xml" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_exam/models/examination.py" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_exam/models/exam_valuation.py" />
+        <option value="$PROJECT_DIR$/cybereducat11/education_exam/views/exam_valuation.xml" />
       </list>
     </option>
   </component>
@@ -288,6 +287,13 @@
               <item name="cybereducat11" type="462c0819:PsiDirectoryNode" />
               <item name="education_exam" type="462c0819:PsiDirectoryNode" />
               <item name="reports" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="odoo11" type="b2602c69:ProjectViewProjectNode" />
+              <item name="odoo11" type="462c0819:PsiDirectoryNode" />
+              <item name="cybereducat11" type="462c0819:PsiDirectoryNode" />
+              <item name="education_exam" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -339,7 +345,7 @@
       <option name="ADD_CONTENT_ROOTS" value="false" />
       <option name="ADD_SOURCE_ROOTS" value="false" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/odoo-bin" />
-      <option name="PARAMETERS" value="-w odoo -r odoo --addons-path cybereducat11 -d data20180917 -u education_core,education_exam" />
+      <option name="PARAMETERS" value="-w odoo -r odoo --addons-path cybereducat11 -d data0921 -u education_core,education_exam" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -425,23 +431,32 @@
     <option name="localTasksCounter" value="7" />
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.19157393" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49844238" visible="true" weight="0.19157393" />
+      <window_info id="Structure" order="1" sideWeight="0.50155765" side_tool="true" weight="0.19157393" />
+      <window_info id="Favorites" order="2" sideWeight="0.50155765" side_tool="true" weight="0.19157393" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49760383" weight="0.3271028" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4944356" visible="true" weight="0.32087228" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49523053" weight="0.2554517" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32866043" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5047695" side_tool="true" weight="0.54361373" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32866043" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32866043" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49920508" weight="0.3271028" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -452,13 +467,13 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49760383" weight="0.32847896" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49760383" weight="0.3271028" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4944356" visible="true" weight="0.32087228" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49840257" weight="0.24922119" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49523053" weight="0.2554517" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5063593" side_tool="true" weight="0.32087228" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5047695" side_tool="true" weight="0.54361373" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49920508" weight="0.3271028" />
@@ -545,205 +560,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo-bin">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/cli/command.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/cli/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="174" selection-start-line="174" selection-end-line="174" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/modules/registry.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/modules/loading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="375" selection-start-line="375" selection-end-line="375" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/modules/module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="367" selection-start-line="367" selection-end-line="367" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/models/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#25#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/models/smsgateway.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/addons/test_new_api/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="273" column="17" selection-start-line="273" selection-start-column="8" selection-end-line="273" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/addons/base/res/res_partner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="207" column="38" selection-start-line="207" selection-start-column="17" selection-end-line="207" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/addons/base/ir/ir_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="1486" selection-start-line="1486" selection-end-line="1486" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="843" selection-start-line="843" selection-end-line="843" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/addons/base_import/models/base_import.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="686" selection-start-line="686" selection-end-line="686" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/addons/web/controllers/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="933" selection-start-line="933" selection-end-line="933" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/service/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/addons/base/ir/ir_http.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="207" selection-start-line="207" selection-end-line="207" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/addons/utm/models/ir_http.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/addons/web_editor/models/ir_http.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/addons/auth_signup/models/ir_http.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python35/Lib/site-packages/werkzeug/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="598" selection-start-line="598" selection-end-line="598" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/service/wsgi_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="165" selection-start-line="165" selection-end-line="165" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python35/Lib/http/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="421" selection-start-line="421" selection-end-line="421" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python35/Lib/site-packages/werkzeug/serving.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="227" selection-start-line="227" selection-end-line="227" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python35/Lib/socketserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="624" selection-start-line="624" selection-end-line="624" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python35/Lib/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="835" column="11" lean-forward="true" selection-start-line="835" selection-start-column="11" selection-end-line="835" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/service/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="249" selection-start-line="249" selection-end-line="249" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odoo/http.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="1317" selection-start-line="1317" selection-end-line="1317" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/views/importpreviousstudent.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
@@ -755,32 +571,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#25#64#0" expanded="true" />
-            <marker date="1537511727452" expanded="true" signature="182:184" ph="..." />
-            <marker date="1537511727452" expanded="true" signature="258:259" ph="..." />
-            <marker date="1537511727452" expanded="true" signature="1346:1353" ph="..." />
-            <marker date="1537511727452" expanded="true" signature="1354:1360" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/views/education_admission.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/models/education_class_wizard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/__manifest__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/models/education_student_class.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -797,9 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
           <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-          <folding>
-            <element signature="e#149#377#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -810,23 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/models/education_student.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/views/education_student.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-          <folding>
-            <element signature="n#record#2;n#odoo#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/models/education_application.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -834,62 +609,6 @@
           <folding>
             <element signature="e#17477#17628#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/views/exam_valuation.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="72" column="105" selection-start-line="72" selection-start-column="105" selection-end-line="72" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/models/examination.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="67" column="30" lean-forward="true" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
-          <folding>
-            <marker date="1537511474453" expanded="true" signature="3459:3464" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/reports/exam_marksheet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/models/exam_valuation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="232" selection-start-line="232" selection-end-line="232" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="80" column="54" selection-start-line="80" selection-start-column="54" selection-end-line="80" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
-          <folding>
-            <marker date="1537511474421" expanded="true" signature="557:563" ph="..." />
-            <marker date="1537511474421" expanded="true" signature="558:563" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="38" column="65" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -911,27 +630,265 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/report.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/models/education_class_wizard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/wizards/academic_transcript_wizard.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="105" selection-start-line="12" selection-start-column="105" selection-end-line="12" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcripCopyt.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="88" column="26" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="88" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/views/education_class_division.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1822" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/wizards/academic_transcript_wizard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/models/education_student.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="830">
+          <caret line="95" column="44" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/views/education_syllabus.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/views/education_student.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="237" lean-forward="true" selection-start-line="237" selection-end-line="237" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/odoo/conf/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/odoo-bin">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MANIFEST.in">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.cfg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/views/education_class.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="119" column="87" selection-start-line="119" selection-start-column="87" selection-end-line="119" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/debian/odoo.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://C:/Python35/Lib/site-packages/psycopg2/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="163" selection-start-line="163" selection-end-line="163" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/models/education_subject.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/reports/exam_marksheet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/__manifest__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/models/education_class_division.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="156" column="24" lean-forward="true" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="77" column="65" lean-forward="true" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/reports/exam_marksheet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/reports/faculty_id_card.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="23" column="65" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/odoo/addons/sale/report/invoice_report_templates.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="104" column="16" lean-forward="true" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_core/reports/student_application_report.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="188" column="53" selection-start-line="188" selection-start-column="53" selection-end-line="188" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_fee/views/fee_register.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="318" column="157" selection-start-line="318" selection-start-column="154" selection-end-line="318" selection-end-column="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/odoo/addons/sale/report/report_all_channels_sales_views.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/odoo/addons/sale/report/sale_report.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/odoo/addons/sale/report/sale_report_templates.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/odoo/addons/base/res/res_partner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="241" column="5" lean-forward="true" selection-start-line="241" selection-start-column="5" selection-end-line="241" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
           <folding>
-            <element signature="e#24#62#0" expanded="true" />
+            <marker date="1537702958021" expanded="true" signature="1902:2287" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="94" column="77" lean-forward="true" selection-start-line="94" selection-start-column="77" selection-end-line="94" selection-end-column="77" />
+        <state relative-caret-position="17">
+          <caret line="66" column="89" selection-start-line="66" selection-start-column="89" selection-end-line="66" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/models/exam_valuation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#t#0;n#t#0;n#template#0;n#data#0;n#odoo#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#t#0;n#t#0;n#t#0;n#template#0;n#data#0;n#odoo#0;n#!!top" />
+            <marker date="1537797185688" expanded="true" signature="2357:2678" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/reports/exam_academic_transcript1.py">
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/models/examination.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+          <caret line="71" column="24" lean-forward="true" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+          <folding>
+            <marker date="1537790508104" expanded="true" signature="1772:2075" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/views/examination.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="30" column="184" selection-start-line="30" selection-start-column="87" selection-end-line="30" selection-end-column="184" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybereducat11/education_exam/views/exam_valuation.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="36" column="90" selection-start-line="36" selection-start-column="90" selection-end-line="36" selection-end-column="90" />
         </state>
       </provider>
     </entry>

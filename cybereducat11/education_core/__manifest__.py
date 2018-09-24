@@ -49,6 +49,8 @@
         'data/education.syllabus.csv',
         'data/res.country.state.csv',
         'data/religion.religion.csv',
+        'data/education.class.division.csv',
+        'data/education.admission.register.csv',
     ],
     'demo': [
         'demo/education_data.xml',

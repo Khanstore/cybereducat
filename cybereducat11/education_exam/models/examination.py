@@ -26,6 +26,15 @@ class EducationExam(models.Model):
     company_id = fields.Many2one('res.company', string='Company',
                                  default=lambda self: self.env['res.company']._company_default_get())
     transcript_id=fields.Many2one('academic.transcript')
+    @api.multi
+    @api.onchange('academic_year','exam_type')
+    def get_class_domain(self):
+        for rec in self:
+            domain=[]
+            existing_class=self.env['education.exam'].search([('exam_type.id','=',rec.exam_type.id),('academic_year.id','=',rec.academic_year.id)])
+            for cls in existing_class:
+                domain.append(cls.class_id.id)
+        return {'domain': {'class_id': [('id', '!=', domain)]}}
     @api.model
     def create(self, vals):
         res = super(EducationExam, self).create(vals)
