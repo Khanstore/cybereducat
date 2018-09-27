@@ -137,8 +137,9 @@ class StudentApplication(models.Model):
                               ('approve', 'Approve'), ('reject', 'Reject'), ('done', 'Done')],
                              string='State', required=True, default='draft', track_visibility='onchange')
 
-
-
+    _sql_constraints = [
+        ('unique_student_id', 'unique(student_id)', 'Student Id must be unique'),
+    ]
 
     @api.onchange('guardian_relation')
     def guardian_relation_changed(self):
@@ -214,15 +215,20 @@ class StudentApplication(models.Model):
                                                   'gender': 'female',
                                                   'is_parent': True})
                 mother = new_mother_id.id
-            guardian_id = self.env['res.partner'].search([('nid_no', '=', rec.guardian_NID )])
-            if guardian_id.id:
-                guardian = guardian_id.id
+            if rec.guardian_relation.name=='Father':
+                guardian=father
+            elif  rec.guardian_relation.name=='Mother':
+                guardian=mother
             else:
-                new_guardian_id = guardian_id.create({'name': rec.guardian_name,
-                                                      'nid_no': rec.guardian_NID,
-                                                      'gender': rec.guardian_relation.gender,
-                                                      'is_parent': True})
-                guardian = new_guardian_id.id
+                guardian_id = self.env['res.partner'].search([('nid_no', '=', rec.guardian_NID )])
+                if guardian_id.id:
+                    guardian = guardian_id.id
+                else:
+                    new_guardian_id = guardian_id.create({'name': rec.guardian_name,
+                                                          'nid_no': rec.guardian_NID,
+                                                          'gender': rec.guardian_relation.gender,
+                                                          'is_parent': True})
+                    guardian = new_guardian_id.id
             values = {
                 'name': rec.name,
                 'name_b': rec.name_b,
@@ -267,8 +273,9 @@ class StudentApplication(models.Model):
                 'student_id': rec.student_id,
                 # 'section_id': rec.section,
                 # 'group_id': rec.group,
-                'import_roll_no': rec.roll_no,
+                # 'import_roll_no': rec.roll_no,
                 'application_no': rec.application_no,
+                'class_id': rec.class_id.id,
 
             }
             if not rec.is_same_address:

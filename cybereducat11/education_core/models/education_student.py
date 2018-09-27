@@ -97,4 +97,5 @@ class EducationStudent(models.Model):
     _sql_constraints = [
         ('ad_no', 'unique(ad_no)', "Another Student already exists with this admission number!"),
         ('roll_no', 'unique(section_id,roll_no)', "Another Student already exists with this Roll Number!"),
+        ('unique_student_id', 'unique(student_id)', 'Student Id must be unique'),
     ]

@@ -26,7 +26,7 @@ class EducationStudentClass(models.Model):
             rec.name=rec.admitted_class.name + '(assigned on '+ rec.assign_date +')'
     @api.multi
     def assign_class(self):
-        max_roll = self.env['education.class.history'].search([], order='roll_no desc', limit=1)
+        max_roll = self.env['education.class.history'].search([('class_id','=',self.admitted_class.id)], order='roll_no desc', limit=1)
         if max_roll.roll_no:
             next_roll = max_roll.roll_no
         else:
@@ -70,7 +70,7 @@ class EducationStudentClass(models.Model):
             for line in rec.student_list:
                 line.unlink()
             students = self.env['education.student'].search([
-                ('admission_class', '=', rec.class_id.id)])
+                ('class_id', '=', rec.class_id.id)])
             if not students:
                 raise ValidationError(_('No Students Available.. !'))
             values = []
@@ -78,7 +78,8 @@ class EducationStudentClass(models.Model):
                 stud_line = {
                     'class_id': rec.class_id.id,
                     'student_id': stud.id,
-                    'connect_id': rec.id
+                    'connect_id': rec.id,
+                    'roll_no': stud.application_id.roll_no
                 }
                 values.append(stud_line)
             for line in values:

@@ -26,6 +26,7 @@ class EducationExam(models.Model):
     company_id = fields.Many2one('res.company', string='Company',
                                  default=lambda self: self.env['res.company']._company_default_get())
     transcript_id=fields.Many2one('academic.transcript')
+    result_sheet_created = fields.Boolean(string='result sheet Created')
     @api.multi
     @api.onchange('academic_year','exam_type')
     def get_class_domain(self):
@@ -71,6 +72,10 @@ class EducationExam(models.Model):
             name = name + ' (' + str(self.class_id.name) + ')'
         self.name = name
         self.state = 'ongoing'
+    @api.multi
+    def create_result_sheet(self):
+        pass
+        return
     @api.multi
     def get_subjects(self):
         for rec in self:
