@@ -49,7 +49,7 @@
                                            </t>
                                      </tr>
 
-                                    <t t-foreach="get_subjects(student)" t-as="subject">
+                                    <t t-foreach="get_subjects(student,docs)" t-as="subject">
 
                                        <tr>
                                            <td>
@@ -62,17 +62,36 @@
                                                FM
                                            </td>
                                            <t t-foreach="get_exams(docs)" t-as="exam">
-                                                <td>
                                                      <t t-foreach="get_marks(exam,subject,student)" t-as="mark">
-                                                        <td><span t-if="mark.tut_mark > 0" t-field="mark.tut_mark"/>
-                                                            <span t-else="" >0</span>
+                                                         <t t-if="len(mark)>0">
+                                                            <td><span  t-field="mark.tut_mark"/>
 
-                                                        </td>
-                                                        <td><span t-field="mark.subj_mark"/></td>
-                                                        <td><span t-field="mark.obj_mark"/></td>
-                                                        <td><span t-field="mark.prac_mark"/></td>
+                                                            </td>
+                                                             <td><span  t-field="mark.subj_mark"/>
+
+                                                            </td>
+                                                             <td><span  t-field="mark.obj_mark"/>
+
+                                                            </td>
+                                                             <td><span  t-field="mark.prac_mark"/>
+
+                                                            </td>
+                                                             <td><span  t-field="mark.mark_scored"/>
+
+                                                            </td>
+                                                            <!--<td><span t-if="mark.subj_mark==True" t-field="mark.subj_mark"/>-->
+                                                                <!--<span t-if="mark.subj_mark==False" >0</span>-->
+                                                            <!--</td>-->
+                                                            <!--<td><span t-if="mark.obj_mark> 0" t-field="mark.obj_mark"/>-->
+                                                                <!--<span t-else="" >absent</span>-->
+                                                            <!--</td>-->
+                                                            <!--<td><span t-if="mark.prac_mark>0" t-field="mark.prac_mark"/>-->
+                                                                <!--<span t-else="" >0</span>-->
+                                                            <!--</td>-->
+                                                         </t>
+
                                                      </t>
-                                                </td>
+
                                            </t>
                                         </tr>
                                     </t>

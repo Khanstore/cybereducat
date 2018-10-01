@@ -35,6 +35,7 @@ class EducationExamValuation(models.Model):
                                     related='division_id.academic_year_id', store=True)
     company_id = fields.Many2one('res.company', string='Company',
                                  default=lambda self: self.env['res.company']._company_default_get())
+    highest=fields.Float('Highest mark Obtained')
     @api.onchange('exam_id','division_id')
     def domain4subject(self):
         domain = []
@@ -107,10 +108,13 @@ class EducationExamValuation(models.Model):
                 'student_id': student.id,
                 'student_name': student.name,
                 'valuation_id': self.id,
+                'tut_mark': 0,
+                'subj_mark': 0,
+                'obj_mark': 0,
+                'prac_mark': 0,
             }
             valuation_line_obj.create(data)
         self.mark_sheet_created = True
-
     @api.model
     def create(self, vals):
         res = super(EducationExamValuation, self).create(vals)
@@ -232,7 +236,6 @@ class StudentsExamValuationLine(models.Model):
            self.pass_or_fail=True
         else :
             self.pass_or_fail=False
-
     @api.multi
     @api.onchange('tut_mark','subj_mark','obj_mark','prac_mark')
     def calculate_marks(self):

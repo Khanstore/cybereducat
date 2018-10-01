@@ -18,7 +18,7 @@ class acdemicTranscript1(models.AbstractModel):
 
         student=[]
         if objects.specific_student==True :
-            student_list = self.env['education.class.history'].search([('student_id.id', '=', objects.student.id)])
+            student_list = self.env['education.class.history'].search([('student_id.id', '=', objects.student.id),('academic_year_id.id', '=', objects.academic_year.id)])
             for stu in student_list:
                 student.extend(stu)
         elif objects.section:
@@ -33,14 +33,14 @@ class acdemicTranscript1(models.AbstractModel):
 
         return student
 
-    def get_subjects(self,student):
-        object=self.env['education.class.history'].search([('id', '=', student.id)])
+    def get_subjects(self,student,object):
+        student_history=self.env['education.class.history'].search([('id', '=', student.id),('academic_year_id',"=",object.academic_year.id)])
         subjs = []
-        for subj in object.compulsory_subjects:
+        for subj in student_history.compulsory_subjects:
             subjs.extend(subj)
-        for subj in object.selective_subjects:
+        for subj in student_history.selective_subjects:
             subjs.extend(subj)
-        for subj in object.optional_subjects:
+        for subj in student_history.optional_subjects:
             subjs.extend(subj)
         return subjs
     def get_gradings(self,obj):
@@ -49,14 +49,18 @@ class acdemicTranscript1(models.AbstractModel):
         for grade in grading:
             grades.extend(grade)
         return grades
-    def get_marks(self,exam,subject,student):
+    def get_marks(self,exam,subject,student_history):
+        student=student_history.student_id
         marks=self.env['education.exam.valuation'].search([('exam_id','=',exam.id),('subject_id','=',subject.id)])
         mark=[]
-        for result in marks.valuation_line:
-            if result.student_id.id==student.id:
-                mark.extend(result)
-                # if result.student_id = student.id:
-                #     mark.append(result.id)
+        results=self.env['exam.valuation.line'].search([('valuation_id.id','=',marks.id),('student_id.id','=',student.id)])
+        if len(results)==0:
+            pass
+        else:
+            mark.extend(results)
+        
+            # if result.student_id = student.id:
+            #     mark.append(result.id)
 
         return mark
 

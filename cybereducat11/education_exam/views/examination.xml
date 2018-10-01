@@ -104,7 +104,7 @@
                             <field name="name" placeholder="Eg: Annual Exam"/>
                         </h1>
                         <group>
-                            <field name="school_class_division_wise" widget="radio"/>
+                            <field name="school_class_division_wise" widget="radio" invisible="True"/>
                         </group>
                     </sheet>
                 </form>
