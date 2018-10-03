@@ -84,7 +84,7 @@
                             <field name="student_ids" nolabel="1">
                                 <tree string="Students" editable="bottom" create="false">
                                     <field name="name"/>
-                                    <field name="class_id"/>
+                                    <field name="roll_no"/>
                                     <field name="gender"/>
                                     <field name="date_of_birth"/>
                                     <field name="blood_group"/>

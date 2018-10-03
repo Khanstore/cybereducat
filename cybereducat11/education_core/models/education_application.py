@@ -25,7 +25,17 @@ class StudentApplication(models.Model):
     # middle_name_b = fields.Char("নামের মধ্যাংশ")
     # last_name_b = fields.Char("নামের শেয়াংশ",required=True)
     already_student=fields.Boolean("Allready Admitted?")
+    ############
+    #these are for import data
     student_id=fields.Char('Student Id')
+    level=fields.Integer('Level')
+    section=fields.Char('Section')
+    group=fields.Char('Group')
+    roll_no=fields.Integer('Roll No')
+    Batch=fields.Char('Batch')
+    import_id=fields.Many2one('import.previous.student')
+
+    ###########
     student_category=fields.Selection([('I',"Internal"),
                                        ('E', "External")],'Category')
     prev_school = fields.Many2one('education.institute', string='Previous Institution',
@@ -74,38 +84,38 @@ class StudentApplication(models.Model):
     guardian_relation = fields.Many2one('gurdian.student.relation', string="Relation to Guardian",  required=True,
                                         help="Tell us the Relation toyour guardian")
     #### guardian Details
-    guardian_name = fields.Char(string="guardian's First Name", help="Proud to say my guardian is",required=True)
+    guardian_name = fields.Char(string="guardian's Name", help="Proud to say my guardian is",required=True)
     # guardian_m_name = fields.Char(string="guardian's Middle Name", help="Proud to say my guardian is")
     # guardian_l_name = fields.Char(string="guardian's Last Name", help="Proud to say my guardian is",required=True)
     guardian_NID = fields.Char(string="guardian's NID", help="guardian's NID",required=True)
-    guardian_mobile = fields.Integer(string="guardian's Mobile No", help="guardian's Mobile No")
+    guardian_mobile = fields.Char(string="guardian's Mobile No", help="guardian's Mobile No")
     guardian_car_no = fields.Char(string="guardian's Car No", help="guardian's Car No")
 
     # guardian_name = fields.Many2one('res.partner', string="Guardian", domain=[('is_parent', '=', True)], required=True,
     #                                 help="Tell us who will take care of you")
     description = fields.Text(string="Note")
     #### Father Details
-    father_name = fields.Char(string="Father's First Name", help="Proud to say my father is",required=True)
+    father_name = fields.Char(string="Father's Name", help="Proud to say my father is",required=True)
     # father_m_name = fields.Char(string="বাবার নাম মধ্য অংশ", help="Proud to say my father is")
     # father_l_name = fields.Char(string="Father's Last Name", help="Proud to say my father is",required=True)
-    father_name_b = fields.Char(string="বাবার নাম প্রথম অংশ", help="Proud to say my father is",required=True)
+    father_name_b = fields.Char(string="বাবার নাম", help="Proud to say my father is",required=True)
     # father_m_name_b = fields.Char(string="বাবার নাম মাঝের অংশ", help="Proud to say my father is")
     # father_l_name_b = fields.Char(string="Father's Last Name", help="Proud to say my father is",required=True)
     father_NID = fields.Char(string="Father's NID", help="Father's NID",required=True)
-    father_mobile = fields.Integer(string="Father's Mobile No", help="Father's Mobile No")
+    father_mobile = fields.Char(string="Father's Mobile No", help="Father's Mobile No")
     father_car_no = fields.Char(string="Father's Car No", help="Father's Car No")
     # father_name = fields.Many2one('res.partner', string="Father", domain=[('is_parent', '=', True)], required=True, help="Proud to say my father is")
     # mother_name = fields.Char(string="Mother", help="My mother's name is")
     # mother_name = fields.Many2one('res.partner', string="Mother", domain=[('is_parent', '=', True)], required=True, help="My mother name is")
     #### Mother Details
-    mother_name = fields.Char(string="mother's First Name", help="Proud to say my mother is",required=True)
-    mother_name_b = fields.Char(string="মা এর প্রথম নাম", help="Proud to say my mother is",required=True)
+    mother_name = fields.Char(string="mother's Name", help="Proud to say my mother is",required=True)
+    mother_name_b = fields.Char(string="মা এর নাম", help="Proud to say my mother is",required=True)
     # mother_m_name = fields.Char(string="mother's Middle Name", help="Proud to say my mother is")
     # mother_m_name_b = fields.Char(string="মা এর মধ্যনাম", help="Proud to say my mother is")
     # mother_l_name = fields.Char(string="mother's Last Name", help="Proud to say my mother is",required=True)
     # mother_l_name_b = fields.Char(string="মায়ের শেষ নাম", help="Proud to say my mother is",required=True)
     mother_NID = fields.Char(string="mother's NID", help="mother's NID",required=True)
-    mother_mobile = fields.Integer(string="mother's Mobile No", help="mother's Mobile No")
+    mother_mobile = fields.Char(string="mother's Mobile No", help="mother's Mobile No")
     mother_car_no = fields.Char(string="mother's Car No", help="mother's Car No")
 
     religion_id = fields.Many2one('religion.religion', string="Religion", help="My Religion is ")
@@ -126,6 +136,10 @@ class StudentApplication(models.Model):
     state = fields.Selection([('draft', 'Draft'), ('verification', 'Verify'),
                               ('approve', 'Approve'), ('reject', 'Reject'), ('done', 'Done')],
                              string='State', required=True, default='draft', track_visibility='onchange')
+
+    _sql_constraints = [
+        ('unique_student_id', 'unique(student_id)', 'Student Id must be unique'),
+    ]
 
     @api.onchange('guardian_relation')
     def guardian_relation_changed(self):
@@ -201,15 +215,20 @@ class StudentApplication(models.Model):
                                                   'gender': 'female',
                                                   'is_parent': True})
                 mother = new_mother_id.id
-            guardian_id = self.env['res.partner'].search([('nid_no', '=', rec.guardian_NID )])
-            if guardian_id.id:
-                guardian = guardian_id.id
+            if rec.guardian_relation.name=='Father':
+                guardian=father
+            elif  rec.guardian_relation.name=='Mother':
+                guardian=mother
             else:
-                new_guardian_id = guardian_id.create({'name': rec.guardian_name,
-                                                      'nid_no': rec.guardian_NID,
-                                                      'gender': rec.guardian_relation.gender,
-                                                      'is_parent': True})
-                guardian = new_guardian_id.id
+                guardian_id = self.env['res.partner'].search([('nid_no', '=', rec.guardian_NID )])
+                if guardian_id.id:
+                    guardian = guardian_id.id
+                else:
+                    new_guardian_id = guardian_id.create({'name': rec.guardian_name,
+                                                          'nid_no': rec.guardian_NID,
+                                                          'gender': rec.guardian_relation.gender,
+                                                          'is_parent': True})
+                    guardian = new_guardian_id.id
             values = {
                 'name': rec.name,
                 'name_b': rec.name_b,
@@ -251,7 +270,13 @@ class StudentApplication(models.Model):
                 'mother_tongue': rec.mother_tongue.id,
                 'admission_class': rec.register_id.standard.id,
                 'company_id': rec.company_id.id,
-                'student_id': rec.student_id
+                'student_id': rec.student_id,
+                # 'section_id': rec.section,
+                # 'group_id': rec.group,
+                # 'import_roll_no': rec.roll_no,
+                'application_no': rec.application_no,
+                'class_id': rec.class_id.id,
+
             }
             if not rec.is_same_address:
                 pass

@@ -22,6 +22,7 @@
         'views/exam_results.xml',
         'views/student_view.xml',
         'reports/exam_academic_transcript.xml',
+        'reports/exam_academic_transcript1.xml',
         'reports/report.xml',
         'wizards/academic_transcript_wizard.xml',
     ],

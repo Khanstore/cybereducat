@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_exam_academic_transcript">
+            <t t-call="web.html_container">
+                <t t-foreach="get_students(docs)" t-as="student">
+<style>
+div.relative {
+    position: relative;
+
+   
+}
+
+div.absolute {
+    position: absolute;
+    top: 0px;
+    right: 0;
+
+}
+div.absoluter {
+    position: absolute;
+    top: 0px;
+    left: 0;
+
+}
+</style>
+
+
+<h2>position: absolute;</h2>
+
+<p>An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed):</p>
+
+<div class="relative">This div element has position: relative;
+  <div class="absolute">
+      <table><tr><td><strong>ID : <span t-field="student.id"/></strong></td></tr>
+                                                    <tr><td><strong> name <span t-field="student.name"/>
+                                                        <span t-field="student.middle_name"/>
+                                                        <span t-field="student.last_name"/>
+                                                    </strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td><strong> Father : <span t-field="student.father_name"/>
+                                                        </strong>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong> Mother : <span t-field="student.mother_name"/>
+                                                        </strong>
+                                                    </td>
+                                                </tr>
+                                            </table>
+  </div>
+   <div class="absoluter">
+          <table>
+                                            <tr><td>letter Grade </td><td>Grade interval </td><td>point</td></tr>
+
+                                                <t t-foreach="get_gradings(o)" t-as="g">
+                                                    <tr><td> <span t-field="g.result"/></td>
+                                                        <td> <span t-field="g.min_per"/>-<span t-field="g.max_per"/>%</td>
+                                                        <td> <span t-field="g.score"/></td>
+                                                    </tr>
+                                                </t>
+
+                                        </table>
+   </div>
+</div>
+                    <div>
+                        <table>
+    <tr>
+         <t t-foreach="get_exams(docs)" t-as="exam">
+            <td>
+                <table><tr>
+                    <t t-if="exam_first"> <td rowspan="2">Subject</td><td rowspan="2">Paper</td><td rowspan="2">Full Mark</td></t>
+        <td colspan="9"> <strong> <span t-field="exam.exam_type"/> </strong></td></tr><tr>
+                <td>Tut</td><td>Sub</td><td>Obj</td><td>Prac</td><td>Total</td><td>Highest</td><td>LG</td><td>GP</td><td>GPA</td></tr>
+                      <t t-foreach="get_subjects(exam)" t-as="s" >
+                          <tr><t t-if="exam_first"><td><span t-field="s.subject_id.name"/> </td><td><span t-field="s.subject_id.paper"/> </td><td><span t-field="s.max_mark"/> </td></t>
+                          <td ><strong> <span t-field="s.tut_mark"/> </strong></td>
+                                            <td ><strong> <span t-field="s.subj_mark"/> </strong></td>
+                                            <td ><strong> <span t-field="s.obj_mark"/> </strong></td>
+                                            <td ><strong> <span t-field="s.prac_mark"/> </strong></td>
+                                            <td ><strong> <span t-field="s.mark_scored"/> </strong></td>
+                                            <td ><strong> Highest </strong></td>
+                                            <td ><strong><span t-field="s.grade"/> </strong></td>
+                                            <td ><strong> <span t-field="s.score"/> </strong></td>
+                                            <td ><strong> GPA </strong></td>
+                          </tr>
+                      </t>
+
+
+                </table>
+            </td>
+         </t>
+    </tr>
+</table>
+                    </div>
+
+                        <!--<div class="page">-->
+                            <!--<style>-->
+                                <!--table, th, td {-->
+                                     <!--border: 1px solid black;-->
+                                    <!--}-->
+                                <!--.left {-->
+                                <!--position: absolute;-->
+                                    <!--left: 0px;-->
+                                    <!--width: 300px;-->
+                                    <!--border: 3px solid #73AD21;-->
+                                    <!--padding: 10px;-->
+                                        <!--}-->
+                                <!--.right {-->
+                                           <!--position: absolute;-->
+                                            <!--right: 0px;-->
+                                            <!--width: 300px;-->
+                                            <!--border: 3px solid #73AD21;-->
+                                            <!--padding: 10px;-->
+
+                                        <!--}-->
+                                <!--.relative{-->
+
+                                <!--}-->
+
+                            <!--</style>-->
+
+                               <!--<div class="oe_structure">-->
+                                   <!--<div class="row"  >-->
+                                       <!--<div class="left">-->
+                                            <!--<table><tr><td><strong>ID : <span t-field="student.id"/></strong></td></tr>-->
+                                                    <!--<tr><td><strong> name <span t-field="student.name"/>-->
+                                                        <!--<span t-field="student.middle_name"/>-->
+                                                        <!--<span t-field="student.last_name"/>-->
+                                                    <!--</strong></td>-->
+                                                    <!--</tr>-->
+                                                    <!--<tr>-->
+                                                    <!--<td><strong> Father : <span t-field="student.father_name"/>-->
+                                                        <!--</strong>-->
+                                                    <!--</td>-->
+                                                <!--</tr>-->
+                                                <!--<tr>-->
+                                                    <!--<td><strong> Mother : <span t-field="student.mother_name"/>-->
+                                                        <!--</strong>-->
+                                                    <!--</td>-->
+                                                <!--</tr>-->
+                                            <!--</table>-->
+                                       <!--</div>-->
+                                       <!--<div class="right">-->
+                                        <!--<table>-->
+                                            <!--<tr><td>letter Grade </td><td>Grade interval </td><td>point</td></tr>-->
+
+                                                <!--<t t-foreach="get_gradings(o)" t-as="g">-->
+                                                    <!--<tr><td> <span t-field="g.result"/></td>-->
+                                                        <!--<td> <span t-field="g.min_per"/>-<span t-field="g.max_per"/>%</td>-->
+                                                        <!--<td> <span t-field="g.score"/></td>-->
+                                                    <!--</tr>-->
+                                                <!--</t>-->
+
+                                        <!--</table>-->
+                                       <!--</div>-->
+                                    <!--</div>-->
+
+                            <!--<div class="row">-->
+
+<!--<table>-->
+    <!--<tr>-->
+         <!--<t t-foreach="get_exams(docs)" t-as="exam">-->
+            <!--<td>-->
+                <!--<table><tr>-->
+                    <!--<t t-if="exam_first"> <td rowspan="2">Subject</td><td rowspan="2">Paper</td><td rowspan="2">Full Mark</td></t>-->
+        <!--<td colspan="9"> <strong> <span t-field="exam.exam_type"/> </strong></td></tr><tr>-->
+                <!--<td>Tut</td><td>Sub</td><td>Obj</td><td>Prac</td><td>Total</td><td>Highest</td><td>LG</td><td>GP</td><td>GPA</td></tr>-->
+                      <!--<t t-foreach="get_subjects(exam)" t-as="s" >-->
+                          <!--<tr><t t-if="exam_first"><td><span t-field="s.subject_id.name"/> </td><td><span t-field="s.subject_id.paper"/> </td><td><span t-field="s.max_mark"/> </td></t>-->
+                          <!--<td ><strong> <span t-field="s.tut_mark"/> </strong></td>-->
+                                            <!--<td ><strong> <span t-field="s.subj_mark"/> </strong></td>-->
+                                            <!--<td ><strong> <span t-field="s.obj_mark"/> </strong></td>-->
+                                            <!--<td ><strong> <span t-field="s.prac_mark"/> </strong></td>-->
+                                            <!--<td ><strong> <span t-field="s.mark_scored"/> </strong></td>-->
+                                            <!--<td ><strong> Highest </strong></td>-->
+                                            <!--<td ><strong><span t-field="s.grade"/> </strong></td>-->
+                                            <!--<td ><strong> <span t-field="s.score"/> </strong></td>-->
+                                            <!--<td ><strong> GPA </strong></td>-->
+                          <!--</tr>-->
+                      <!--</t>-->
+
+
+                <!--</table>-->
+            <!--</td>-->
+         <!--</t>-->
+    <!--</tr>-->
+<!--</table>-->
+                            <!--</div>-->
+ <!--</div>                        </div>-->
+                    <!--</t>-->
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

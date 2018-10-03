@@ -36,7 +36,7 @@ class EducationStudent(models.Model):
             if not recs:
                 recs = self.search([('ad_no', operator, name)] + (args or []), limit=limit)
             if not recs:
-                recs = self.search([('ad_no', operator, name)] + (args or []), limit=limit)
+                recs = self.search([('student_id', operator, name)] + (args or []), limit=limit)
             return recs.name_get()
         return super(EducationStudent, self).name_search(name, args=args, operator=operator, limit=limit)
 
@@ -51,7 +51,7 @@ class EducationStudent(models.Model):
         'res.partner', string='Partner', required=True, ondelete="cascade")
     middle_name = fields.Char(string='Middle Name')
     last_name = fields.Char(string='Last Name')
-    name_b = fields.Char("নামের প্রথম অংশ")
+    name_b = fields.Char("নাম")
     middle_name_b = fields.Char("নামের মধ্যাংশ")
     last_name_b = fields.Char("নামের শেষাংশ")
     application_no = fields.Char(string="Application No")
@@ -89,7 +89,13 @@ class EducationStudent(models.Model):
     nationality = fields.Many2one('res.country', string='Nationality', ondelete='restrict',default=19,)
     application_id = fields.Many2one('education.application', string="Application No")
     class_history_ids = fields.One2many('education.class.history', 'student_id', string="Application No")
-    student_id=fields.Char('Student ID')
+    roll_no=fields.Integer('Roll No')
+    student_id=fields.Char('Student Id')
+    section_id=fields.Integer('section_id')
+    group_id=fields.Integer('Group')
+    import_roll_no=fields.Integer('Roll No')
     _sql_constraints = [
         ('ad_no', 'unique(ad_no)', "Another Student already exists with this admission number!"),
+        ('roll_no', 'unique(section_id,roll_no)', "Another Student already exists with this Roll Number!"),
+        ('unique_student_id', 'unique(student_id)', 'Student Id must be unique'),
     ]

@@ -61,12 +61,19 @@ class EducationSyllabus(models.Model):
     subject_id = fields.Many2one('education.subject', string='Subject')
     paper = fields.Char( string='Paper')
     active=fields.Boolean('Active?',related='academic_year.active')
+    compulsory_for=fields.Many2many('education.class.history','education_syllabus_class_history_rel',
+                                    'compulsory_for','compulsory_subjects','compulsory for')
+    selective_for=fields.Many2many('education.class.history','education_syllabus_class_history_1_rel',
+                                    'selective_for','selective_subjects','selective for')
+    optional_for=fields.Many2many('education.class.history','education_syllabus_class_history_optional_rel',
+                                    'optional_for','optional_subjects','Optional for')
+
     subject_type = fields.Selection(
         [('theory', 'Theory'), ('practical', 'Practical'),
          ('both', 'Both'), ('other', 'Other')],
         'Subject Type', default="theory", required=True)
     selection_type = fields.Selection(
-        [('compulsory', 'Compulsory'), ('elective', 'Elective')],
+        [('compulsory', 'Compulsory'), ('elective', 'Elective'),('optional', 'Optional')],
         'Selection Type', default="compulsory", required=True)
     # total_hours = fields.Float(string='Total Hours')
     total_mark=fields.Float('Total')
@@ -101,6 +108,7 @@ class EducationSyllabus(models.Model):
                     reccode = reccode + rec.class_id.code + '-' + rec.academic_year.ay_code
             rec.name=recname
             rec.code=reccode
+    @api.model
     @api.onchange('tut_mark','subj_mark','obj_mark','prac_mark','tut_pass','subj_pass','obj_pass','prac_pass')
     def calculate_total_mark(self):
         for rec in self:

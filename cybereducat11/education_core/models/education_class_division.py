@@ -49,7 +49,7 @@ class EducationDivision(models.Model):
 
     name = fields.Char(string='Name', required=True, help="Enter the Name of the Division")
     code = fields.Char(string='Code', required=True, help="Enter the Code of the Division")
-    strength = fields.Integer(string='Max Student No', help="Total strength of the class")
+    strength = fields.Integer(string='Max Student No',default='100', help="Total strength of the class")
     faculty_id = fields.Many2one('education.faculty', string='Class Faculty', help="Class teacher/Faculty")
     classes_ids = fields.Many2many('education.class','class_dev_rel','classes_ids','division_ids', string='Class')
 
@@ -133,15 +133,27 @@ class EducationClassDivision(models.Model):
 
 class EducationClassDivisionHistory(models.Model):
     _name = 'education.class.history'
-    _description = "Class room history"
+    _description = "Student Class history"
     _rec_name = 'class_id'
 
     academic_year_id = fields.Many2one('education.academic.year', string='Academic Year',
                                        help="Select the Academic Year")
     class_id = fields.Many2one('education.class.division', string='Class',
                                help="Select the class")
+    level=fields.Many2one('education.class',string='level',related='class_id.class_id') #related='class_id.class_id'
+    section=fields.Many2one('education.class.section',string='section',related='class_id.section_id') #
+    from_date=fields.Date('From')
+    till_date=fields.Date('Till')
     student_id = fields.Many2one('education.student', string='Students')
     roll_no=fields.Integer('Roll No',required=True)
+    compulsory_subjects=fields.Many2many('education.syllabus','education_syllabus_class_history_rel',
+                                         'compulsory_subjects','compulsory_for',string='Compulsory')
+    selective_subjects=fields.Many2many('education.syllabus','education_syllabus_class_history_1_rel',
+                                        'selective_subjects','selective_for',string='Selective')
+    optional_subjects=fields.Many2many('education.syllabus','education_syllabus_class_history_optional_rel',
+                                        'optional_subjects','optional_for',string='Optional')
+    # selective_subjects=fields.Many2many('education.syllabus','selective_for',string='Selective')
+    # optional_subjects=fields.Many2many('education.syllabus','optional_for',string='Optional')
     _sql_constraints = [
         ('student_class_history', 'unique(academic_year_id,student_id)', "Student mustbe Unique for a year"),
         ('student_class_history', 'unique(academic_year_id,class_id,roll_no)', "Roll no must be qnique for Class"),

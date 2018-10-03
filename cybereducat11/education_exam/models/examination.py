@@ -26,6 +26,16 @@ class EducationExam(models.Model):
     company_id = fields.Many2one('res.company', string='Company',
                                  default=lambda self: self.env['res.company']._company_default_get())
     transcript_id=fields.Many2one('academic.transcript')
+    result_sheet_created = fields.Boolean(string='result sheet Created')
+    @api.multi
+    @api.onchange('academic_year','exam_type')
+    def get_class_domain(self):
+        for rec in self:
+            domain=[]
+            existing_class=self.env['education.exam'].search([('exam_type.id','=',rec.exam_type.id),('academic_year.id','=',rec.academic_year.id)])
+            for cls in existing_class:
+                domain.append(cls.class_id.id)
+        return {'domain': {'class_id': [('id', '!=', domain)]}}
     @api.model
     def create(self, vals):
         res = super(EducationExam, self).create(vals)
@@ -63,13 +73,17 @@ class EducationExam(models.Model):
         self.name = name
         self.state = 'ongoing'
     @api.multi
+    def create_result_sheet(self):
+        pass
+        return
+    @api.multi
     def get_subjects(self):
         for rec in self:
             subjline_obj=self.env['education.subject.line']
 
             subjects=self.env['education.syllabus'].search([('class_id','=',rec.class_id.id),('academic_year','=',rec.academic_year.id)])  #.search([('class_id', '=', self.id)])
             for subject in subjects :
-                data={'subject_id': subject.subject_id.id,
+                data={'subject_id': subject.id,
                       'exam_id': rec.id,
                       'time_from': '10.30',
                       'time_to': '12.30',
