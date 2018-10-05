@@ -276,6 +276,7 @@ class StudentApplication(models.Model):
                 # 'import_roll_no': rec.roll_no,
                 'application_no': rec.application_no,
                 'class_id': rec.class_id.id,
+                'roll_no': rec.roll_no,
 
             }
             if not rec.is_same_address:

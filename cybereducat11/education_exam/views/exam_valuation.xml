@@ -30,7 +30,7 @@
 
                                 <field name="division_id"
                                        attrs="{'readonly': ['|', ('mark_sheet_created', '=', True), ('state', '!=', 'draft')]}"/>
-                                <field name="highest" />
+
                                 <field name="teachers_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                 <field name="date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                 <field name="subject_id" widget="selection"
@@ -77,6 +77,8 @@
                                         <field name="mark_scored"/>
                                         <field name="pass_or_fail" widget="boolean_toggle"/>
                                         <field name="valuation_id" invisible="1"/>
+                                        <field name="letter_grade" invisible="1"/>
+                                        <field name="grade_point" invisible="1"/>
                                     </tree>
                                     <form>
                                         <sheet>
@@ -85,6 +87,8 @@
                                                 <field name="mark_scored"/>
                                                 <field name="pass_or_fail" widget="boolean_toggle"/>
                                                 <field name="valuation_id" invisible="1"/>
+                                                <field name="letter_grade"/>
+                                                <field name="grade_point" />
                                             </group>
                                         </sheet>
                                     </form>

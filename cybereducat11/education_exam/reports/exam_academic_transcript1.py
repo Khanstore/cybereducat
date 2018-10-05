@@ -51,19 +51,32 @@ class acdemicTranscript1(models.AbstractModel):
         return grades
     def get_marks(self,exam,subject,student_history):
         student=student_history.student_id
-        marks=self.env['education.exam.valuation'].search([('exam_id','=',exam.id),('subject_id','=',subject.id)])
-        mark=[]
-        results=self.env['exam.valuation.line'].search([('valuation_id.id','=',marks.id),('student_id.id','=',student.id)])
-        if len(results)==0:
-            pass
-        else:
-            mark.extend(results)
-        
-            # if result.student_id = student.id:
-            #     mark.append(result.id)
+        marks=self.env['results.subject.line'].search([('exam_id','=',exam.id),('subject_id','=',subject.id),('student_id','=',student.id)])
+        return marks
+    def get_highest(self,exam,subject):
+        highest = self.env['results.subject.line'].search(
+            [('exam_id', '=', exam.id), ('subject_id', '=', subject.id)], limit=1, order='mark_scored DESC')
+        return highest
+    def get_gpa(self,student_history,exam):
+        student = student_history.student_id
+        gp=0
+        count=0
+        records = self.env['results.subject.line'].search(
+            [('exam_id', '=',exam.id ),  ('student_id', '=', student.id)])
+        for rec in records:
+            gp=gp+ rec.grade_point
+            count=count+1
 
-        return mark
 
+        return float("{0:.2f}".format(gp/count))
+    def get_row_count(self,student_history,exam):
+        student = student_history.student_id
+        count=0
+        records = self.env['results.subject.line'].search(
+            [('exam_id', '=',exam.id ),  ('student_id', '=', student.id)])
+        for rec in records:
+            count=count+1
+        return count
     def get_date(self, date):
         date1 = datetime.strptime(date, "%Y-%m-%d")
         return str(date1.month) + ' / ' + str(date1.year)
@@ -81,5 +94,8 @@ class acdemicTranscript1(models.AbstractModel):
             'get_gradings':self.get_gradings,
             'get_marks':self.get_marks,
             'get_date': self.get_date,
+            'get_highest': self.get_highest,
+            'get_gpa': self.get_gpa,
+            'get_row_count': self.get_row_count,
             # 'get_total': self.get_total,
         }

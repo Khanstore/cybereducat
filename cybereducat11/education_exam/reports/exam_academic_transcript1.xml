@@ -42,58 +42,55 @@
 
                                            </t>
                                      </tr>
-                                    <tr>
-                                          <t t-foreach="get_exams(docs)" t-as="exam">
-                                              <td>Tut</td><td>Sub</td><td>Obj</td><td>Prac</td><td>Total</td><td>Highest</td><td>LG</td><td>GP</td><td>GPA</td>
 
+                                          <t t-foreach="get_exams(docs)" t-as="exam">
+                                              <t t-if="exam_first">
+                                                  <!--here I input <tr>-->
+                                             <p>&lt;tr&gt;</p>
+                                              </t>
+                                              <td>Tut</td><td>Sub</td><td>Obj</td><td>Prac</td><td>Total</td><td>Highest</td><td>LG</td><td>GP</td><td>GPA</td>
+                                                <t t-if="exam_last">
+                                                    <!--here I input </tr>-->
+
+                                                    <p>&lt;/tr&gt;</p>
+                                                </t>
                                            </t>
-                                     </tr>
+
 
                                     <t t-foreach="get_subjects(student,docs)" t-as="subject">
 
                                        <tr>
-                                           <td>
-                                                <span t-field="subject.name"/>
-                                           </td>
-                                           <td>
-                                               Paper
-                                           </td>
-                                           <td>
-                                               FM
-                                           </td>
                                            <t t-foreach="get_exams(docs)" t-as="exam">
-                                                     <t t-foreach="get_marks(exam,subject,student)" t-as="mark">
-                                                         <t t-if="len(mark)>0">
-                                                            <td><span  t-field="mark.tut_mark"/>
 
-                                                            </td>
-                                                             <td><span  t-field="mark.subj_mark"/>
 
-                                                            </td>
-                                                             <td><span  t-field="mark.obj_mark"/>
+                                               <t t-if="exam_first">
+                                                   <td>
+                                                        <span t-field="subject.display"/>
+                                                   </td>
+                                                   <td>
+                                                       <span t-field="subject.paper"/>
+                                                   </td>
+                                                   <td>
+                                                       <span t-field="subject.total_mark"/>
+                                                   </td>
+                                               </t>
 
-                                                            </td>
-                                                             <td><span  t-field="mark.prac_mark"/>
+                                                   <t t-set="highest" t-value="get_highest(exam,subject)"/>
 
-                                                            </td>
-                                                             <td><span  t-field="mark.mark_scored"/>
 
-                                                            </td>
-                                                            <!--<td><span t-if="mark.subj_mark==True" t-field="mark.subj_mark"/>-->
-                                                                <!--<span t-if="mark.subj_mark==False" >0</span>-->
-                                                            <!--</td>-->
-                                                            <!--<td><span t-if="mark.obj_mark> 0" t-field="mark.obj_mark"/>-->
-                                                                <!--<span t-else="" >absent</span>-->
-                                                            <!--</td>-->
-                                                            <!--<td><span t-if="mark.prac_mark>0" t-field="mark.prac_mark"/>-->
-                                                                <!--<span t-else="" >0</span>-->
-                                                            <!--</td>-->
-                                                         </t>
-
-                                                     </t>
-
-                                           </t>
-                                        </tr>
+                                               <t t-foreach="get_marks(exam,subject,student)" t-as="mark">
+                                                  <td><span t-field="mark.tut_mark"/></td>
+                                                  <td><span t-field="mark.subj_mark"/></td>
+                                                  <td><span t-field="mark.obj_mark"/></td>
+                                                  <td><span t-field="mark.prac_mark"/></td>
+                                                  <td><span t-field="mark.mark_scored"/></td>
+                                                  <td><span t-field="highest.mark_scored"/></td>
+                                                  <td><span t-field="mark.letter_grade"/></td>
+                                                  <td><span t-field="mark.grade_point"/></td>
+                                                   <t t-if="subject_first"><td t-att-rowspan="get_row_count(student,exam)"> <span t-esc="get_gpa(student,exam)"/></td></t>
+                                                </t>
+                                            </t>
+                                       </tr>
                                     </t>
 
                                     </table>

@@ -36,6 +36,12 @@ class EducationStudentClass(models.Model):
 
             if not self.student_list:
                 raise ValidationError(_('No Student Lines'))
+            com_sub = self.env['education.syllabus'].search(
+                [('class_id', '=', rec.class_id.id), ('academic_year', '=', rec.admitted_class.academic_year_id.id),
+                 ('selection_type', '=', 'compulsory')])
+            subjects = []
+            for sub in com_sub:
+                subjects.append(sub.id)
             for line in self.student_list:
                 next_roll = next_roll + 1
                 st=self.env['education.student'].search([('id','=',line.student_id.id)])
@@ -43,12 +49,14 @@ class EducationStudentClass(models.Model):
                 st.class_id = rec.admitted_class.id
                 line.roll_no=next_roll
 
+
                 # create student history
 
                 self.env['education.class.history'].create({'academic_year_id': rec.admitted_class.academic_year_id.id,
                                                             'class_id': rec.admitted_class.id,
                                                             'student_id': line.student_id.id,
-                                                            'roll_no': next_roll
+                                                            'roll_no': next_roll,
+                                                            'compulsory_subjects': [(6, 0, subjects)],
                                                             })
 
             self.write({

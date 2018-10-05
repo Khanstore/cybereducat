@@ -74,8 +74,19 @@ class EducationExam(models.Model):
         self.state = 'ongoing'
     @api.multi
     def create_result_sheet(self):
-        pass
-        return
+        sections=self.env['education.class.division'].search([('academic_year_id','=',self.academic_year.id),('class_id','=',self.class_id.id)])
+        subjects=self.subject_line
+        for section in sections:
+            for subject in subjects:
+                self.env['education.exam.valuation'].create({
+                    'exam_id':self.id,
+                    'class_id':self.class_id.id,
+                    'division_id':section.id,
+                    # 'section_id':self.section,
+                    'subject_id':subject.subject_id.id,
+                    'academic_year':self.academic_year.id,
+                })
+
     @api.multi
     def get_subjects(self):
         for rec in self:
