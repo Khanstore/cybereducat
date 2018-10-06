@@ -112,9 +112,8 @@
                                                 </t>
                                            </t>
 
-
+                                    <t t-set="subject_count" t-value="len(get_subjects(student,docs))" />
                                     <t t-foreach="get_subjects(student,docs)" t-as="subject">
-
                                        <tr>
                                            <t t-foreach="get_exams(docs)" t-as="exam">
 
@@ -164,7 +163,7 @@
                                                   <td><span t-field="highest.mark_scored"/></td>
                                                   <td><span t-field="mark.letter_grade"/></td>
                                                   <td><span t-field="mark.grade_point"/></td>
-                                                   <t t-if="subject_first"><td t-att-rowspan="get_row_count(student,exam)"> <span t-esc="get_gpa(student,exam)"/></td></t>
+                                                   <t t-if="subject_first"><td t-att-rowspan="subject_count"> <span t-esc="get_gpa(student,exam)"/></td></t>
                                                 </t>
                                             </t>
                                        </tr>
@@ -177,7 +176,9 @@
                                             <td colspan="19"> Additional Subject: (Mark above 40% and GPA  above 2.00) </td>
                                         </tr>
 <!-- For Optional Subject-->
+                                            <t t-set="optional_count" t-value="len(get_optional_subjects(student,docs))" />
 <t t-foreach="get_optional_subjects(student,docs)" t-as="optional">
+
 
                                        <tr>
                                            <t t-foreach="get_exams(docs)" t-as="exam">
@@ -228,11 +229,14 @@
                                                   <td><span t-field="highest.mark_scored"/></td>
                                                   <td><span t-field="mark.letter_grade"/></td>
                                                   <td><span t-field="mark.grade_point"/></td>
-                                                   <t t-if="optional_first"><td t-att-rowspan="get_row_count(student,exam)"> <span t-esc="get_gpa(student,exam)"/></td></t>
+                                                   <t t-if="optional_first"><td t-att-rowspan="optional_count"> <span t-esc="get_gpa(student,exam)"/></td></t>
                                                 </t>
                                             </t>
                                        </tr>
                                     </t>
+                                        <tr><td colspan="13">Total Marks with Additional Subject:(percentage of total mark With Additional Subject:0.00%)</td><td></td><td colspan="2"></td><td colspan="3>"</tr>
+                                    <tr><td colspan="15">Continuous Assesment</td></tr>
+                                        <tr><td colspan="4">Physical Training</td><td></td><td></td></tr>
                                     </table>
 
                                 </div>
