@@ -120,7 +120,23 @@
                 </tree>
             </field>
         </record>
+        <record id="examination_list_form_view" model="ir.ui.view">
+            <field name="name">examination_list.form</field>
+            <field name="model">exam.list</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
 
+        <record id="act_examination_list_view" model="ir.actions.act_window">
+            <field name="name">Exam list</field>
+            <field name="res_model">exam.list</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
         <record id="act_exam_type_view" model="ir.actions.act_window">
             <field name="name">Exam Type</field>
             <field name="res_model">education.exam.type</field>
@@ -141,6 +157,8 @@
 
         <menuitem id="examination_type_menu" parent="education_exam.examination_configuration_menu"
                   action="act_exam_type_view" name="Exam Types" sequence="15"/>
+        <menuitem id="examination_list_menu" parent="education_exam.examination_configuration_menu"
+                  action="act_examination_list_view" name="Exam List" sequence="15"/>
 
     </data>
 </odoo>

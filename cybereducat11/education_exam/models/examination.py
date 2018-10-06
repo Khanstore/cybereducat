@@ -122,3 +122,13 @@ class EducationExamType(models.Model):
                                                   string='Exam Type', default='class')
     company_id = fields.Many2one('res.company', string='Company',
                                  default=lambda self: self.env['res.company']._company_default_get())
+class examlist(models.Model):
+    _name='exam.list'
+    name=fields.Char("exam List")
+    batch=fields.Many2one('education.academic.year',"batch")
+    class_id= fields.Many2one('education.class',"Class")
+    group= fields.Many2one('education.division',"Group")
+    section= fields.Many2one('education.class.section',"Section")
+    subject= fields.Many2one('education.syllabus',"Subject")
+    exam_type= fields.Many2one('education.exam.type',"Exam")
+
