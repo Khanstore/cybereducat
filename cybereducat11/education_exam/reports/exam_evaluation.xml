@@ -5,10 +5,12 @@
         <template id="report_exam_evaluation">
             <t t-call="web.html_container">
                 <t t-foreach="get_sections(docs)" t-as="section">
+                <t t-set="subjects" t-value="get_subjects(section,docs)"/>
+
                      <t t-call="web.external_layout">
                         <t t-set="exam_list" t-value="get_exams(docs)" />
                          <t t-set="exam_count" t-value="0"/>
-                         <t t-foreach="examlist" t-as="exam">
+                         <t t-foreach="exam_list" t-as="exam">
                              <t t-set="exam_count" t-value="exam_count+1"/>
                          </t>
                         <style>
@@ -66,10 +68,10 @@
                                             <span> Group: N/A</span>
                                         </t>
                                     </div>
-                                    <table>
+                                    <table width="100%">
                                     <t t-foreach="get_students(section)" t-as="student">
                                         <tr>
-                                            <td rowspan="3">
+                                            <td t-att-rowspan="exam_count">
                                                 <span t-field="student.student_id" />
                                             </td>
                                             <td t-att-rowspan="exam_count">
@@ -80,11 +82,19 @@
                                             </td>
                                             <t t-foreach="exam_list" t-as="exam">
                                                 <t t-if="exam_first">
-                                                    <td><span t-field="exam.exam_type"/> </td><span> &lt;/tr &gt;</span>
+                                                    <td><span t-field="exam.exam_type"/> </td>
+                                                    <t t-foreach="subjects" t-as="subject">
+                                                        <td><span t-field="subject.display"/> </td>
+                                                    </t><span> &lt;/tr &gt;</span>
+
                                                 </t>
                                                 <t t-else="">
                                                     <tr>
-                                                    <td><span t-field="exam.exam_type"/> </td></tr>
+                                                    <td><span t-field="exam.exam_type"/> </td>
+                                                    <t t-foreach="subjects" t-as="subject">
+                                                        <td><span t-field="subject.display" /> </td>
+                                                    </t>
+                                                    </tr>
                                                 </t>
                                             </t>
                                         </tr>

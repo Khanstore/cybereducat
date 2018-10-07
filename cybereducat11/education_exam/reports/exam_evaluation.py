@@ -29,20 +29,18 @@ class examEvaluation(models.AbstractModel):
         for stu in student_list:
             student.extend(stu.student_id)
         return student
+    def get_subjects(self, section,obj):
+        subjs=self.env['education.syllabus'].search([('class_id','=',section.class_id.id),('academic_year','=',obj.academic_year.id)])
 
-
-
-
-
-
-
-
-    def get_subjects(self, obj):
-        object=self.env['education.exam.results'].browse(obj.id)
-        subjs = []
-        for subj in object.subject_line:
-            subjs.extend(subj)
         return subjs
+
+
+
+
+
+
+
+
     def get_gradings(self,obj):
         grading=self.env['education.result.grading'].search([('id','>','0')],order='min_per desc',)
         grades=[]

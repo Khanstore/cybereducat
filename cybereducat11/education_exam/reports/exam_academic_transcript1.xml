@@ -78,7 +78,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <table>
+                                    <table width="100%">
                                      <tr>
                                           <t t-foreach="get_exams(docs)" t-as="exam">
                                                 <t t-if="exam_first">
