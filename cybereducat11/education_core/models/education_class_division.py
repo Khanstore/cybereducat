@@ -60,6 +60,7 @@ class EducationClassDivision(models.Model):
     _description = "Class room"
 
     name = fields.Char(string='Name', readonly=True)
+    display=fields.Char('Class Name')
     actual_strength = fields.Integer(string='Max student No', help="Total strength of the class")
     faculty_id = fields.Many2one('education.faculty', string='Class Teacher', help="Class teacher/Faculty")
     academic_year_id = fields.Many2one('education.academic.year', string='Academic Year',

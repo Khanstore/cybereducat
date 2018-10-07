@@ -18,16 +18,22 @@
                                     }
                             .right_top{
                             float:right;
-                            padding-top:0px;
+                            padding-top:90px;
                             }
                             .right{
                             float:right;
                             padding-top:10px;
+                            padding-left:80px;
+                            padding-right:10px;
+                            padding-bottom:10px;
                             }
                             .rotated {
                             writing-mode: tb-rl;
                             transform: rotate(-90deg);
-                            white-space: nowrap;
+                            -webkit-transform: rotate(-90deg);
+                            -moz-transform: rotate(-90deg);
+                            -o-transform: rotate(-90deg);
+                            -ms-transform: rotate(-90deg);
 
 
                             }
@@ -92,7 +98,7 @@
                                      <tr>
                                           <t t-foreach="get_exams(docs)" t-as="exam">
                                                 <t t-if="exam_first">
-                                                    <td rowspan="2">Subject</td><td rowspan="2">Paper</td><td colspan="8">Full Mark</td><td colspan="3">Obtained Marks</td><td class="rotated" rowspan="2">Total Mark</td><td rowspan="2"  class="rotated" >Highest Mark</td><td rowspan="2">LG</td><td rowspan="2">GP</td><td rowspan="2" class="rotated" >GPA <span fontsize="7">(without 4th Subject)</span></td><td rowspan="2">GPA</td>
+                                                    <td rowspan="2">Subject</td><td rowspan="2">Paper</td><td colspan="8">Full Mark</td><td colspan="3">Obtained Marks</td><td class="rotated" rowspan="2">Total Mark</td><td rowspan="2"  class="rotated" >Highest Mark</td><td rowspan="2">LG</td><td rowspan="2">GP</td><td rowspan="2" class="rotated" >GPA (without 4th Subject)</td><td rowspan="2">GPA</td>
                                                 </t>
 
 

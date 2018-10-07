@@ -124,9 +124,17 @@
             <field name="name">examination_list.form</field>
             <field name="model">exam.list</field>
             <field name="arch" type="xml">
-                <tree>
-                    <field name="name"/>
-                </tree>
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="batch"/>
+                        <field name="class_id"/>
+                        <field name="group"/>
+                        <field name="section"/>
+                        <field name="subject"/>
+                        <field name="exam_type"/>
+                    </group>
+                </form>
             </field>
         </record>
 
