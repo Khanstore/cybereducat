@@ -27,13 +27,13 @@
                             padding-right:10px;
                             padding-bottom:10px;
                             }
-                            .rotated {
-                            writing-mode: tb-rl;
-                            transform: rotate(-90deg);
-                            -webkit-transform: rotate(-90deg);
-                            -moz-transform: rotate(-90deg);
-                            -o-transform: rotate(-90deg);
-                            -ms-transform: rotate(-90deg);
+                            <!--.rotated {-->
+                            <!--writing-mode: tb-rl;-->
+                            <!--transform: rotate(-90deg);-->
+                            <!-- -webkit-transform: rotate(-90deg);-->
+                            <!-- -moz-transform: rotate(-90deg);-->
+                            <!-- -o-transform: rotate(-90deg);-->
+                            <!-- -ms-transform: rotate(-90deg);-->
 
 
                             }
@@ -98,7 +98,7 @@
                                      <tr>
                                           <t t-foreach="get_exams(docs)" t-as="exam">
                                                 <t t-if="exam_first">
-                                                    <td rowspan="2">Subject</td><td rowspan="2">Paper</td><td colspan="8">Full Mark</td><td colspan="3">Obtained Marks</td><td class="rotated" rowspan="2">Total Mark</td><td rowspan="2"  class="rotated" >Highest Mark</td><td rowspan="2">LG</td><td rowspan="2">GP</td><td rowspan="2" class="rotated" >GPA (without 4th Subject)</td><td rowspan="2">GPA</td>
+                                                    <td rowspan="2">Subject</td><td rowspan="2">Paper</td><td colspan="8">Full Mark</td><td colspan="3">Obtained Marks</td><td class="rotated" rowspan="2">Total <br/> ark</td><td rowspan="2"  class="rotated" >Highest <br/> Mark</td><td rowspan="2">LG</td><td rowspan="2">GP</td><td rowspan="2" class="rotated" >GPA <br/>(without <br/> 4th <br/>Subject)</td><td rowspan="2">GPA</td>
                                                 </t>
 
 
@@ -122,11 +122,15 @@
                                     <t t-foreach="get_subjects(student,docs)" t-as="subject">
                                        <tr>
                                            <t t-foreach="get_exams(docs)" t-as="exam">
-
+                                                <t t-set="totalMark" t-value="60"/>
 
                                                <t t-if="exam_first">
                                                    <td>
                                                         <span t-field="subject.display"/>
+                                                        <span t-esc="totalMark"/>
+                                                       <t>
+
+                                                       </t>
                                                    </td>
                                                    <td>
                                                        <span t-field="subject.paper"/>
@@ -166,6 +170,9 @@
                                                   <td><span t-field="mark.obj_mark"/></td>
                                                   <td><span t-field="mark.prac_mark"/></td>
                                                   <td><span t-field="mark.mark_scored"/></td>
+
+                                                  <!--<t t-set="totalMark" t-value="totalMark + mark.mark_scored"/>-->
+
                                                   <td><span t-field="highest.mark_scored"/></td>
                                                   <td><span t-field="mark.letter_grade"/></td>
                                                   <td><span t-field="mark.grade_point"/></td>
@@ -176,7 +183,7 @@
                                     </t>
                                         <tr><td colspan="13">Total Mark Without Additional Subject:
                                                                 (percentage of total marks Without additional Subject:</td>
-                                            <td>    (Total) </td><td colspan="5"></td>
+                                            <td>  <span t-esc="totalMark"/> </td><td colspan="5"></td>
                                         </tr>
                                         <tr>
                                             <td colspan="19"> Additional Subject: (Mark above 40% and GPA  above 2.00) </td>
